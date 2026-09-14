@@ -40,6 +40,16 @@
 | `RESOURCES/` | 参考 16S 数据：`rRNA16S.gold.fasta`（近全长、相对无嵌合，取自 RDP/细菌基因组）及其 NAST 比对 `rRNA16S.gold.NAST_ALIGNED.fasta`（致谢 RDP 的 Jim Cole） |
 | `docs/` | `microbiomeutil.asciidoc`、`microbiomeutil.html`（工具用法文档）、`old.microbiomeutil.asciidoc`、`images/` |
 
+### 工具简介
+
+**ChimeraSlayer**（`ChimeraSlayer/`）
+
+- 简介：ChimeraSlayer 是 microbiomeutil 工具包中的嵌合体检测工具，使用 BLAST 比对方法检测 16S rRNA 基因序列中的嵌合体。它是 QIIME 1.x 中默认的嵌合体检测方法之一。
+- 官网：`https://microbiomeutil.sourceforge.net/`
+- 构成：`ChimeraSlayer.pl`（主程序）+ `PerlLib/`、`util/`、`sample_data/`，另含 `__ChimeraConstructorToolkit`、`__KmerChimerDetector`、`__BroadBellerophon`、`ChimeraParentSelector`、`ChimeraPhyloChecker`
+
+其余工具（`NAST-iEr`、`WigeoN`、`TreeChopper`、`AmosCmp16Spipeline`）的说明见上表与各自目录内的 README。
+
 ## 依赖（上游 README 与各子目录 README）
 
 需另行安装并加入 `PATH`：
