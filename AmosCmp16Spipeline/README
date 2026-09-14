@@ -1,0 +1,60 @@
+## amosCmp16Spipeline  ##
+
+amosCmp16Spipeline performs a reference-assisted assembly of reads corresponding to 16S rRNA using the AMOScmp software.
+
+Algorithm: given the following inputs:
+     -fasta file containing sequencing reads
+	-file containing the corresponding qual values
+	-file enumerating the accessions corresponding to reads of the same clone (individual assembly tasks)
+	-a reference database of 16S rRNA sequences
+
+	the single reference sequence that best matches all the reads is chosen.  Lucy is used to trim the sequence reads of low quality termini. An additional homology-trimming operation is performed to exclude regions of the sequence that lack homology to the reference.  The resulting trimmed reads and quality values are used to generate a sequence assembly using the AMOScmp software.  A scaffold sequence is generated, where N's are used to fill in gaps according to estimated gap sizes based on reference sequence anchoring, and quality values are reported according to the scaffold sequence.
+
+
+INSTALLATION:
+
+The following tools must be installed:
+
+    1.  Mummer:  http://mummer.sourceforge.net/
+
+	2.  Amos:  http://amos.sourceforge.net/
+
+	   Note that you must 'patch' the Amos software by replacing the official amos/bin/AMOScmp  script with what's provided here as:
+   
+			AmosPatch/AMOScmp
+
+	    -all this patch does is to run a few extra amos commands to generate additional data files that are not automatically provided by the current distribution.
+	  	
+		-edit the top of the AMOScmp script to provide proper paths to BINDIR and NUCMER.  (nucmer is provided in the Mummer software above).
+
+
+	3.  Lucy: http://lucy.sourceforge.net/
+
+	4.  Megablast: http://www.ncbi.nlm.nih.gov/blast/download.shtml  (but you probably already have this installed anyway).
+
+	5. CdbTools: http://compbio.dfci.harvard.edu/tgi/cgi-bin/tgi/download.pl?ftp_dir=software&file_dir=cdbfasta/cdbfasta.tar.gz
+
+
+## Configuring amosCmp16Spipeline
+
+-copy the __conf.txt to 'conf.txt' and edit the paths to point to your installation directories for megablast, lucy, and amos.
+
+
+
+## Running  amosCmp16Spipeline
+
+Example data to demonstrate use of amosCmp16Spipeline is provided in the sample_data/ directory.
+
+The runMe.sh script demonstrates usage.
+
+Note that full paths to the input files are required.
+
+A .seq, .qual, and .log file are generated.  The headers of the .seq entries identify the reads that were assembled into each scaffold.  The .log file describes how the individual sequences were analyzed, which sequences may have been tossed due to low quality or lack of sequence homology, and possible errors encountered throughout the process.  If you're missing sequences in your scaffolds for whatever reason, the .log file will hopefully indicate why.
+
+
+Questions, comments, etc?  Contact Brian Haas bhaas@broadinstitute.org
+
+
+
+
+

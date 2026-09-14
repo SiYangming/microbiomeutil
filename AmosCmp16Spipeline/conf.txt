@@ -1,0 +1,4 @@
+LUCY_DIR                   /seq/annotation/bio_tools/LUCY/lucy-1.19p/
+MEGABLAST_DIR         	   /broad/tools/bin/
+AMOS_DIR	               /seq/annotation/bio_tools/AMOS/amos-2.0.8/bin/
+ 

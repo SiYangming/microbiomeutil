@@ -1,0 +1,66 @@
+#!/seq/annotation/bio_tools/AMOS/amos-2.0.8.././bin/runAmos -C
+# `AMOScmp' - The AMOS Comparative Assembler Pipeline
+
+#--------------------------------------- USER DEFINED VALUES ------------------#
+TGT = $(PREFIX).afg
+REF = $(PREFIX).1con
+#------------------------------------------------------------------------------#
+
+
+#####  Must set  BINDIR and NUCMER below ################
+
+BINDIR=/seq/annotation/bio_tools/AMOS/amos-2.0.8.././bin
+NUCMER=/seq/annotation/bio_tools/mummer/3.20/nucmer
+
+####################################################
+
+
+# Do not need to touch anything below.
+
+
+SEQS     = $(PREFIX).seq
+BANK     = $(PREFIX).bnk
+ALIGN    = $(PREFIX).delta
+LAYOUT   = $(PREFIX).layout
+CONFLICT = $(PREFIX).conflict
+CONTIG   = $(PREFIX).contig
+CONTIG_LAYOUT = $(PREFIX).contig_layout
+FASTA    = $(PREFIX).fasta
+QUAL     = $(PREFIX).qual
+SCAFFOLD = $(PREFIX).scaffold
+SCAFFOLD_LAYOUT = $(PREFIX).scaffold_layout
+
+
+INPUTS   = $(TGT) $(REF)
+OUTPUTS  = $(CONTIG) $(FASTA) $(QUAL) $(SCAFFOLD) $(SCAFFOLD_LAYOUT) $(CONTIG_LAYOUT)
+
+
+## Building AMOS bank
+10: $(BINDIR)/bank-transact -c -z -b $(BANK) -m $(TGT)
+
+## Collecting clear range sequences
+20: $(BINDIR)/dumpreads $(BANK) > $(SEQS)
+
+## Running nucmer
+30: $(NUCMER) --maxmatch --prefix=$(PREFIX) $(REF) $(SEQS)
+
+## Running layout
+40: $(BINDIR)/casm-layout -U $(LAYOUT) -C $(CONFLICT) -b $(BANK) -S $(ALIGN)
+
+## Running consensus
+50: $(BINDIR)/make-consensus -B -b $(BANK)
+
+## Outputting contigs
+60: $(BINDIR)/bank2contig $(BANK) > $(CONTIG)
+
+## Outputting fasta
+70: $(BINDIR)/bank2fasta -b $(BANK) -q $(QUAL) > $(FASTA)
+
+## Outputting contig layout
+75: $(BINDIR)/bank2contig -L $(BANK)  > $(CONTIG_LAYOUT)
+
+## Outputting scaffold
+80: $(BINDIR)/bank2scaff -f -g -G 0 $(BANK) > $(SCAFFOLD)
+
+## Outputting scaffold layout
+90: $(BINDIR)/bank2scaff $(BANK) > $(SCAFFOLD_LAYOUT)

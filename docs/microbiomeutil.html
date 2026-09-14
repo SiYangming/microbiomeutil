@@ -1,0 +1,837 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+<meta name="generator" content="AsciiDoc 8.6.4" />
+<title>Microbiome Utilities Portal of the Broad Institute</title>
+<style type="text/css">
+/* Sans-serif font. */
+h1, h2, h3, h4, h5, h6,
+div.title, caption.title,
+thead, p.table.header,
+div#toctitle,
+span#author, span#revnumber, span#revdate, span#revremark,
+div#footer {
+  font-family: Arial,Helvetica,sans-serif;
+}
+
+/* Serif font. */
+div.sectionbody {
+  font-family: Georgia,"Times New Roman",Times,serif;
+}
+
+/* Monospace font. */
+tt {
+  font-size: inherit;
+}
+
+body {
+  margin: 1em 5% 1em 5%;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+}
+a:visited {
+  color: fuchsia;
+}
+
+em {
+  font-style: italic;
+  color: navy;
+}
+
+strong {
+  font-weight: bold;
+  color: #083194;
+}
+
+tt {
+  font-size: inherit;
+  color: navy;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #527bbd;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid silver;
+}
+h2 {
+  padding-top: 0.5em;
+}
+h3 {
+  float: left;
+}
+h3 + * {
+  clear: left;
+}
+
+div.sectionbody {
+  margin-left: 0;
+}
+
+hr {
+  border: 1px solid silver;
+}
+
+p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+ul, ol, li > p {
+  margin-top: 0;
+}
+ul > li     { color: #aaa; }
+ul > li > * { color: black; }
+
+pre {
+  padding: 0;
+  margin: 0;
+}
+
+span#author {
+  color: #527bbd;
+  font-weight: bold;
+  font-size: 1.1em;
+}
+span#email {
+}
+span#revnumber, span#revdate, span#revremark {
+}
+
+div#footer {
+  font-size: small;
+  border-top: 2px solid silver;
+  padding-top: 0.5em;
+  margin-top: 4.0em;
+}
+div#footer-text {
+  float: left;
+  padding-bottom: 0.5em;
+}
+div#footer-badges {
+  float: right;
+  padding-bottom: 0.5em;
+}
+
+div#preamble {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+div.tableblock, div.imageblock, div.exampleblock, div.verseblock,
+div.quoteblock, div.literalblock, div.listingblock, div.sidebarblock,
+div.admonitionblock {
+  margin-top: 1.0em;
+  margin-bottom: 1.5em;
+}
+div.admonitionblock {
+  margin-top: 2.0em;
+  margin-bottom: 2.0em;
+  margin-right: 10%;
+  color: #606060;
+}
+
+div.content { /* Block element content. */
+  padding: 0;
+}
+
+/* Block element titles. */
+div.title, caption.title {
+  color: #527bbd;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 1.0em;
+  margin-bottom: 0.5em;
+}
+div.title + * {
+  margin-top: 0;
+}
+
+td div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content div.title:first-child {
+  margin-top: 0.0em;
+}
+div.content + div.title {
+  margin-top: 0.0em;
+}
+
+div.sidebarblock > div.content {
+  background: #ffffee;
+  border: 1px solid #dddddd;
+  border-left: 4px solid #f0f0f0;
+  padding: 0.5em;
+}
+
+div.listingblock > div.content {
+  border: 1px solid #dddddd;
+  border-left: 5px solid #f0f0f0;
+  background: #f8f8f8;
+  padding: 0.5em;
+}
+
+div.quoteblock, div.verseblock {
+  padding-left: 1.0em;
+  margin-left: 1.0em;
+  margin-right: 10%;
+  border-left: 5px solid #f0f0f0;
+  color: #777777;
+}
+
+div.quoteblock > div.attribution {
+  padding-top: 0.5em;
+  text-align: right;
+}
+
+div.verseblock > pre.content {
+  font-family: inherit;
+  font-size: inherit;
+}
+div.verseblock > div.attribution {
+  padding-top: 0.75em;
+  text-align: left;
+}
+/* DEPRECATED: Pre version 8.2.7 verse style literal block. */
+div.verseblock + div.attribution {
+  text-align: left;
+}
+
+div.admonitionblock .icon {
+  vertical-align: top;
+  font-size: 1.1em;
+  font-weight: bold;
+  text-decoration: underline;
+  color: #527bbd;
+  padding-right: 0.5em;
+}
+div.admonitionblock td.content {
+  padding-left: 0.5em;
+  border-left: 3px solid #dddddd;
+}
+
+div.exampleblock > div.content {
+  border-left: 3px solid #dddddd;
+  padding-left: 0.5em;
+}
+
+div.imageblock div.content { padding-left: 0; }
+span.image img { border-style: none; }
+a.image:visited { color: white; }
+
+dl {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+dt {
+  margin-top: 0.5em;
+  margin-bottom: 0;
+  font-style: normal;
+  color: navy;
+}
+dd > *:first-child {
+  margin-top: 0.1em;
+}
+
+ul, ol {
+    list-style-position: outside;
+}
+ol.arabic {
+  list-style-type: decimal;
+}
+ol.loweralpha {
+  list-style-type: lower-alpha;
+}
+ol.upperalpha {
+  list-style-type: upper-alpha;
+}
+ol.lowerroman {
+  list-style-type: lower-roman;
+}
+ol.upperroman {
+  list-style-type: upper-roman;
+}
+
+div.compact ul, div.compact ol,
+div.compact p, div.compact p,
+div.compact div, div.compact div {
+  margin-top: 0.1em;
+  margin-bottom: 0.1em;
+}
+
+div.tableblock > table {
+  border: 3px solid #527bbd;
+}
+thead, p.table.header {
+  font-weight: bold;
+  color: #527bbd;
+}
+tfoot {
+  font-weight: bold;
+}
+td > div.verse {
+  white-space: pre;
+}
+p.table {
+  margin-top: 0;
+}
+/* Because the table frame attribute is overriden by CSS in most browsers. */
+div.tableblock > table[frame="void"] {
+  border-style: none;
+}
+div.tableblock > table[frame="hsides"] {
+  border-left-style: none;
+  border-right-style: none;
+}
+div.tableblock > table[frame="vsides"] {
+  border-top-style: none;
+  border-bottom-style: none;
+}
+
+
+div.hdlist {
+  margin-top: 0.8em;
+  margin-bottom: 0.8em;
+}
+div.hdlist tr {
+  padding-bottom: 15px;
+}
+dt.hdlist1.strong, td.hdlist1.strong {
+  font-weight: bold;
+}
+td.hdlist1 {
+  vertical-align: top;
+  font-style: normal;
+  padding-right: 0.8em;
+  color: navy;
+}
+td.hdlist2 {
+  vertical-align: top;
+}
+div.hdlist.compact tr {
+  margin: 0;
+  padding-bottom: 0;
+}
+
+.comment {
+  background: yellow;
+}
+
+.footnote, .footnoteref {
+  font-size: 0.8em;
+}
+
+span.footnote, span.footnoteref {
+  vertical-align: super;
+}
+
+#footnotes {
+  margin: 20px 0 20px 0;
+  padding: 7px 0 0 0;
+}
+
+#footnotes div.footnote {
+  margin: 0 0 5px 0;
+}
+
+#footnotes hr {
+  border: none;
+  border-top: 1px solid silver;
+  height: 1px;
+  text-align: left;
+  margin-left: 0;
+  width: 20%;
+  min-width: 100px;
+}
+
+div.colist td {
+  padding-right: 0.5em;
+  padding-bottom: 0.3em;
+  vertical-align: top;
+}
+div.colist td img {
+  margin-top: 0.3em;
+}
+
+@media print {
+  div#footer-badges { display: none; }
+}
+
+div#toc {
+  margin-bottom: 2.5em;
+}
+
+div#toctitle {
+  color: #527bbd;
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-top: 1.0em;
+  margin-bottom: 0.1em;
+}
+
+div.toclevel1, div.toclevel2, div.toclevel3, div.toclevel4 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+div.toclevel2 {
+  margin-left: 2em;
+  font-size: 0.9em;
+}
+div.toclevel3 {
+  margin-left: 4em;
+  font-size: 0.9em;
+}
+div.toclevel4 {
+  margin-left: 6em;
+  font-size: 0.9em;
+}
+
+span.aqua { color: aqua; }
+span.black { color: black; }
+span.blue { color: blue; }
+span.fuchsia { color: fuchsia; }
+span.gray { color: gray; }
+span.green { color: green; }
+span.lime { color: lime; }
+span.maroon { color: maroon; }
+span.navy { color: navy; }
+span.olive { color: olive; }
+span.purple { color: purple; }
+span.red { color: red; }
+span.silver { color: silver; }
+span.teal { color: teal; }
+span.white { color: white; }
+span.yellow { color: yellow; }
+
+span.aqua-background { background: aqua; }
+span.black-background { background: black; }
+span.blue-background { background: blue; }
+span.fuchsia-background { background: fuchsia; }
+span.gray-background { background: gray; }
+span.green-background { background: green; }
+span.lime-background { background: lime; }
+span.maroon-background { background: maroon; }
+span.navy-background { background: navy; }
+span.olive-background { background: olive; }
+span.purple-background { background: purple; }
+span.red-background { background: red; }
+span.silver-background { background: silver; }
+span.teal-background { background: teal; }
+span.white-background { background: white; }
+span.yellow-background { background: yellow; }
+
+span.big { font-size: 2em; }
+span.small { font-size: 0.6em; }
+</style>
+<script type="text/javascript">
+/*<![CDATA[*/
+window.onload = function(){asciidoc.footnotes();}
+var asciidoc = {  // Namespace.
+
+/////////////////////////////////////////////////////////////////////
+// Table Of Contents generator
+/////////////////////////////////////////////////////////////////////
+
+/* Author: Mihai Bazon, September 2002
+ * http://students.infoiasi.ro/~mishoo
+ *
+ * Table Of Content generator
+ * Version: 0.4
+ *
+ * Feel free to use this script under the terms of the GNU General Public
+ * License, as long as you do not remove or alter this notice.
+ */
+
+ /* modified by Troy D. Hanson, September 2006. License: GPL */
+ /* modified by Stuart Rackham, 2006, 2009. License: GPL */
+
+// toclevels = 1..4.
+toc: function (toclevels) {
+
+  function getText(el) {
+    var text = "";
+    for (var i = el.firstChild; i != null; i = i.nextSibling) {
+      if (i.nodeType == 3 /* Node.TEXT_NODE */) // IE doesn't speak constants.
+        text += i.data;
+      else if (i.firstChild != null)
+        text += getText(i);
+    }
+    return text;
+  }
+
+  function TocEntry(el, text, toclevel) {
+    this.element = el;
+    this.text = text;
+    this.toclevel = toclevel;
+  }
+
+  function tocEntries(el, toclevels) {
+    var result = new Array;
+    var re = new RegExp('[hH]([2-'+(toclevels+1)+'])');
+    // Function that scans the DOM tree for header elements (the DOM2
+    // nodeIterator API would be a better technique but not supported by all
+    // browsers).
+    var iterate = function (el) {
+      for (var i = el.firstChild; i != null; i = i.nextSibling) {
+        if (i.nodeType == 1 /* Node.ELEMENT_NODE */) {
+          var mo = re.exec(i.tagName);
+          if (mo && (i.getAttribute("class") || i.getAttribute("className")) != "float") {
+            result[result.length] = new TocEntry(i, getText(i), mo[1]-1);
+          }
+          iterate(i);
+        }
+      }
+    }
+    iterate(el);
+    return result;
+  }
+
+  var toc = document.getElementById("toc");
+  var entries = tocEntries(document.getElementById("content"), toclevels);
+  for (var i = 0; i < entries.length; ++i) {
+    var entry = entries[i];
+    if (entry.element.id == "")
+      entry.element.id = "_toc_" + i;
+    var a = document.createElement("a");
+    a.href = "#" + entry.element.id;
+    a.appendChild(document.createTextNode(entry.text));
+    var div = document.createElement("div");
+    div.appendChild(a);
+    div.className = "toclevel" + entry.toclevel;
+    toc.appendChild(div);
+  }
+  if (entries.length == 0)
+    toc.parentNode.removeChild(toc);
+},
+
+
+/////////////////////////////////////////////////////////////////////
+// Footnotes generator
+/////////////////////////////////////////////////////////////////////
+
+/* Based on footnote generation code from:
+ * http://www.brandspankingnew.net/archive/2005/07/format_footnote.html
+ */
+
+footnotes: function () {
+  var cont = document.getElementById("content");
+  var noteholder = document.getElementById("footnotes");
+  var spans = cont.getElementsByTagName("span");
+  var refs = {};
+  var n = 0;
+  for (i=0; i<spans.length; i++) {
+    if (spans[i].className == "footnote") {
+      n++;
+      // Use [\s\S] in place of . so multi-line matches work.
+      // Because JavaScript has no s (dotall) regex flag.
+      note = spans[i].innerHTML.match(/\s*\[([\s\S]*)]\s*/)[1];
+      noteholder.innerHTML +=
+        "<div class='footnote' id='_footnote_" + n + "'>" +
+        "<a href='#_footnoteref_" + n + "' title='Return to text'>" +
+        n + "</a>. " + note + "</div>";
+      spans[i].innerHTML =
+        "[<a id='_footnoteref_" + n + "' href='#_footnote_" + n +
+        "' title='View footnote' class='footnote'>" + n + "</a>]";
+      var id =spans[i].getAttribute("id");
+      if (id != null) refs["#"+id] = n;
+    }
+  }
+  if (n == 0)
+    noteholder.parentNode.removeChild(noteholder);
+  else {
+    // Process footnoterefs.
+    for (i=0; i<spans.length; i++) {
+      if (spans[i].className == "footnoteref") {
+        var href = spans[i].getElementsByTagName("a")[0].getAttribute("href");
+        href = href.match(/#.*/)[0];  // Because IE return full URL.
+        n = refs[href];
+        spans[i].innerHTML =
+          "[<a href='#_footnote_" + n +
+          "' title='View footnote' class='footnote'>" + n + "</a>]";
+      }
+    }
+  }
+}
+
+}
+/*]]>*/
+</script>
+</head>
+<body class="article">
+<div id="header">
+<h1>Microbiome Utilities Portal of the Broad Institute</h1>
+</div>
+<div id="content">
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph"><p><span class="image">
+<img src="images/broad-hmp-banner.gif" alt="Broad HMP logo" width="800" />
+</span></p></div>
+<div class="paragraph"><p>The Human Microbiome Project (HMP) is an exciting Roadmap initiative funded by the National Institutes of Health (NIH). The goal of the project is to understand how the microbial communities inhabiting our bodies contribute to normal human health, development, and disease (<a href="http://nihroadmap.nih.gov/hmp/">http://nihroadmap.nih.gov/hmp</a>).</p></div>
+<div class="paragraph"><p>The Broad Institute (<a href="http://www.broadinstitute.org">http://www.broadinstitute.org</a>) was launched in 2004 with the visionary philanthropic investment of Eli and Edythe Broad, who joined with leaders at Harvard and its affiliated hospitals, MIT, and the Whitehead Institute to pioneer a "new model” of collaborative science. The Broad Institute is organized as a transparent infrastructure that allows biology- and technology-focused scientists to work together to identify and overcome the most critical obstacles to realizing the full promise of genomic medicine.</p></div>
+<div class="paragraph"><p>The Broad Institute aggressively advances sequence-based technologies and the bioinformatics necessary to characterize the vast complexity of the human microbiome. In keeping with our mission, we make the microbiome analysis utilities developed by the Broad Institute available to the community in order to promote further innovation and collaborative research efforts. We appreciate your feedback.</p></div>
+<div class="paragraph"><p>The utilities developed by the Broad Institute and provided here apply to a range of challenges posed by the microbiome initiative, including:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Sequence alignment (<a href="#A_NASTiEr">NAST-iEr</a>)
+</p>
+</li>
+<li>
+<p>
+Chimera detection (<a href="#A_CS">ChimeraSlayer</a>, <a href="#A_WigeoN">WigeoN</a>)
+</p>
+</li>
+<li>
+<p>
+Operational taxonomic unit OTU binning (<a href="#A_TreeChopper">TreeChopper</a>)
+</p>
+</li>
+<li>
+<p>
+Sequence assembly (<a href="#A_AMOScmp">AmosCmp16Spipeline</a>)
+</p>
+</li>
+</ul></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">ChimeraSlayer, WigeoN, NAST-iEr, and the database of reference 16S sequences are provided as a single co-dependent <a href="http://sourceforge.net/project/showfiles.php?group_id=262346">download</a>.  Sample data and usage instructions are included.</td>
+</tr></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_microbiome_analysis_utilities">Microbiome Analysis Utilities</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="A_CS">ChimeraSlayer</h3>
+<div class="paragraph"><p>ChimeraSlayer  <a href="http://sourceforge.net/project/showfiles.php?group_id=262346">(download)</a> is a chimeric sequence detection utility, compatible with near-full length Sanger sequences and shorter 454-FLX sequences (~500 bp).</p></div>
+<div class="paragraph"><p>Chimera Slayer involves the following series of steps that operate to flag chimeric 16S rRNA sequences: (A) the ends of a query sequence  are searched against an included database of reference chimera-free 16S sequences to identify potential parents of a chimera; (B) candidate parents of a chimera are selected as those that form a branched best scoring alignment to the NAST-formatted query sequence; &#169; the NAST alignment of the query sequence is improved in a ‘chimera-aware’ profile-based NAST realignment to the selected reference parent sequences; and (D) an evolutionary framework is used to flag query sequences found to exhibit greater sequence homology to an in silico chimera formed between any two of the selected reference parent sequences.</p></div>
+<div class="paragraph"><p>To run Chimera Slayer, you need NAST-formatted sequences generated by the included <a href="#A_NASTiEr">NAST-iEr</a> utility.  Given NAST-formatted sequences, run ChimeraSlayer like so:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>%microbiomeutil/ChimeraSlayer/ChimeraSlayer.pl  --query_NAST  ${sequences}.NAST</tt></pre>
+</div></div>
+<div class="paragraph"><p>The output files include the following:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>${sequences}.NAST.CPS                      :results from the chimera parent selection step
+${sequences}.NAST.CPS_RENAST               :NAST alignments from a 'chimera-aware' realignment of the query
+${sequences}.NAST.CPS.CPC                  :results from the chimera 'phylo-checker' step  ** the Chimera Slayer final verdict **
+${sequences}.NAST.CPS.CPC.wTaxons          :the taxonomy of the reference (step)parents of the chimera</tt></pre>
+</div></div>
+<div class="paragraph"><p>The .CPC output file is tab-delimited with the following fields:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>0      ChimeraSlayer
+1      chimera_AJ007403            # the accession of the chimera query
+2      S000387216                  # reference parent A
+3      S000001688                  # reference parent B
+4      0.9422                      # divergence ratio of query to chimera (left_A, right_B)
+5      90.00                       # percent identity between query and chimera(left_A, right_B)
+6      0                           # confidence in query as a chimera related to (left_A, right_B)
+7      1.0419                      # divergence ratio of query to chimera (right_A, left_B)
+8      99.52                       # percent identity between query and chimera(right_A, left_B)
+9      100                         # confidence in query as a chimera related to (right_A, left_B)
+10     YES                         # ** verdict as a chimera or not **
+11     NAST:4032-4033              # estimated approximate chimera breakpoint in NAST coordinates
+12     ECO:767-768                 # estimated approximate chimera breakpoint according to the E. coli unaligned reference seq coordinates</tt></pre>
+</div></div>
+<div class="paragraph"><p>For those query sequences flagged as chimeras, the .wTaxons file includes the following extra columns:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>13      Rhodococcus                                                                # genus name of Parent A
+14      Rhodococcus koreensis (T); DNP505; AF124342 Rhodococcus koreensis          # descriptive info for Parent A
+15      Streptomyces                                                               # genus name of Parent B
+16      Streptomyces somaliensis (T); DSM 40738; AJ007403 Streptomyces somaliensis # descriptive info for Parent B
+17      INTRA-ORDER                                                                # type of chimera based on selected parents</tt></pre>
+</div></div>
+<div class="admonitionblock">
+<table><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">It is <strong>not</strong> recommended to blindly discard all sequences flagged as chimeras.  Some may represent naturally formed chimeras that do not represent PCR artifacts.   Sequences flagged may warrant further investigation.</td>
+</tr></table>
+</div>
+<div class="paragraph"><p>If you use the --printCSalignments option, a diagram of the query matching the parents on both sides of the breakpoint is included in the output.  For example:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>Per_id parents: 89.52</tt></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>          Per_id(Q,A): 94.00
+--------------------------------------------------- A: S000387216
+88.65                                99.06
+~~~~~~~~~~~~~~~~~~~~~~~~\ /~~~~~~~~~~~~~~~~~~~~~~~~ Q: chimera_AJ007403
+DivR: 0.942 BS: 0.00     |
+Per_id(QLA,QRB): 90.00   |
+                         |
+   (L-AB: 88.65)         |      (R-AB: 90.34)
+   WinL:0-704            |      WinR:705-1449
+                         |
+Per_id(QLB,QRA): 99.52   |
+DivR: 1.042 BS: 100.00   |
+~~~~~~~~~~~~~~~~~~~~~~~~/ \~~~~~~~~~~~~~~~~~~~~~~~~~ Q: chimera_AJ007403
+100.00                                91.28
+---------------------------------------------------- B: S000001688
+           Per_id(Q,B): 95.52</tt></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>DeltaL: -11.35                   DeltaR: 7.79</tt></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+GGAGGCTCGTACCGCTGTCTTGTTAAGGACTGGTTTTTTACTGTCTATACAGACTCTTCA  A: S000387216
+AAGACGCTTGGGTTTCACTCCTGCGCTTCGGCCGGGCCCGGCACTCGCCACAGTCTCGAG  Q: chimera_AJ007403
+AAGACGCTTGGGTTTCACTCCTGCGCTTCGGCCGGGCCCGGCACTCGCCACAGTCTCGAG  B: S000001688</tt></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>!!!!!!!!!!!!!!!!!!!!
+TACTACTGGATATCCTGATA  A: S000387216
+CGTCGTCTTGATGTTCACAT  Q: chimera_AJ007403
+CGTCGTCTTGATGTTCACAT  B: S000001688</tt></pre>
+</div></div>
+<div class="ulist"><ul>
+<li>
+<p>
+Breakpoint **
+</p>
+<div class="literalblock">
+<div class="content">
+<pre><tt>                           !!!!!!!
+TGCGTTCGGATCGATTGTTGCCGTACGCTGTGTCGATTAAAGGTAATCATAAGGGCTTTC  A: S000387216
+TGCGTTCGGATCGATTGTTGCCGTACGCCTGTGTCATTAAAGGTAATCATAAGGGCTTTC  Q: chimera_AJ007403
+GTAACGATCGCTTCCAACCCATCCGGTGCTGTGTCGCCGGGCACGGCTTGGGAATTAACT  B: S000001688
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!       !!!!!!!!!!!!!!!!!!!!!!!!!</tt></pre>
+</div></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>GACTTACGACTC  A: S000387216
+GACTTACGACTC  Q: chimera_AJ007403
+ATTCCCAAGTCT  B: S000001688
+!!!!!!!!!!!!</tt></pre>
+</div></div>
+</li>
+</ul></div>
+<div class="paragraph"><p>The above indicates the percent identities between the alignment segments corresponding to query and either parent.  Since chimeras can occur two ways: (left parent A &amp; right parent B) or (left parent B &amp; right parent A), a fork diagram is shown with the statistics for each potential chimera as it relates to the query sequence.  The bootstrap (BS) values indicate the confidence level for the corresponding chimera type.  The informative SNP positions from the complete alignments are shown for both sides of the breakpoint.</p></div>
+</div>
+<div class="sect2">
+<h3 id="A_WigeoN">WigeoN</h3>
+<div class="paragraph"><p>WigeoN <a href="http://sourceforge.net/project/showfiles.php?group_id=262346">(download)</a> examines the sequence conservation between a query and a trusted reference sequence, both in NAST alignment format.  Based on the sequence identity between the query and the reference sequence, there is an expected amount of variation among the alignment. If the observed variation is greater than the 95% quantile of the distribution of variation observed between non-anomalous sequences, then it is flagged as an anomaly.</p></div>
+<div class="paragraph"><p>WigeoN is a flexible command-line based reimplementation of the <a href="http://www.bioinformatics-toolkit.org/Pintail/">Pintail</a> algorithm <a href="http://www.pubmedcentral.nih.gov/articlerender.fcgi?tool=pubmed&amp;pubmedid=16332745">Appl Environ Microbiol. 2005 Dec;7112:7724-36</a>.</p></div>
+<div class="paragraph"><p>WigeoN is useful for flagging chimeras and anomalies <strong>only in near full-length 16S rRNA sequences</strong>.  WigeoN lacks sensitivity with sequences less than 1000 bp.</p></div>
+<div class="paragraph"><p>To run WigeoN, you need NAST-formatted sequences generated by the included &lt;&lt;A_NASTiEr, NAST-iEr&gt; utility.  Given NAST-formatted sequences, run WigeoN like so:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>%microbiomeutil/WigeoN/run_WigeoN.pl --query_NAST ${sequences}.NAST  &gt;  ${sequences}.WigeoN</tt></pre>
+</div></div>
+<div class="paragraph"><p>The output is tab-delimited like so:</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>0       chimera_AJ007403       # query sequence
+1       S000387216             # best matching reference sequence
+2       div:
+3       5.45                   # percent sequence divergence between the query and the reference sequence
+4       stDev:
+5       4.01                   # standard deviation from expected reference sequence divergence across alignment windows
+6       Quant95:Yes            # stDev is in the top 5% of stDev values observed among reference sequences at that same mean divergence
+7       Quant99:YES            # top 1%  *** This value is recommended for flagging aberrant sequences ***
+8       Quant99.9:No           # top 0.1%
+9       Quant99.99:No          # top 0.01%</tt></pre>
+</div></div>
+</div>
+<div class="sect2">
+<h3 id="A_NASTiEr">NAST-iEr</h3>
+<div class="paragraph"><p>The NAST-iEr alignment utility <a href="http://sourceforge.net/project/showfiles.php?group_id=262346">(download)</a> aligns a single raw nucleotide sequence against one or more NAST formatted sequences.</p></div>
+<div class="paragraph"><p>The alignment algorithm involves global dynamic programming profile alignment to fixed (NAST-formatted) multiply aligned template sequences without any end-gap penalty.</p></div>
+<div class="paragraph"><p>Run it like so, using a set of fasta-formatted sequences.</p></div>
+<div class="literalblock">
+<div class="content">
+<pre><tt>% microbiomeutil/NAST-iEr/run_NAST-iEr.pl --query_FASTA ${sequences}.fasta  &gt; ${sequences}.NAST</tt></pre>
+</div></div>
+</div>
+<div class="sect2">
+<h3 id="A_AMOScmp">AmosCmp16Spipeline</h3>
+<div class="paragraph"><p>AmosCmp16Spipeline <a href="http://sourceforge.net/project/showfiles.php?group_id=262346">(download)</a> uses the AMOScmp software to assemble multiple, potentially overlapping 16S rRNA sequencing reads based on read mappings to a reference 16S rRNA gene.</p></div>
+<div class="paragraph"><p>Given the following inputs:
+-fasta file containing sequencing reads
+-file containing the corresponding qual values
+-file enumerating the accessions corresponding to reads of the same clone individual assembly tasks
+-a reference database of 16S rRNA sequences</p></div>
+<div class="paragraph"><p>The single reference sequence that best matches all the reads is chosen.  Lucy is used to trim the sequence reads of low quality termini. An additional homology-trimming operation is performed to exclude regions of the sequence that lack homology to the reference.  The resulting trimmed reads and quality values are used to generate a sequence assembly using the AMOScmp software.  A scaffold sequence is generated, where Ns are used to fill in gaps according to estimated gap sizes based on reference sequence anchoring, and quality values are reported according to the scaffold sequence. A README file containing instructions and sample data are provided.</p></div>
+</div>
+<div class="sect2">
+<h3 id="A_TreeChopper">TreeChopper</h3>
+<div class="paragraph"><p>TreeChopper <a href="http://sourceforge.net/project/showfiles.php?group_id=262346">(download)</a> clusters tree leaf nodes according to phylogenetic distance.</p></div>
+<div class="paragraph"><p>A graph is constructed from the tree like so:  all leaves are visited, and from each leaf, all neighboring leaves within a specified distance threshold are added to a graph with an edge placed between them.  After building this graph, each edge connecting pairs of nodes is examined and a Jaccard similarity coefficient is computed (see <a href="http://www.biomedcentral.com/1741-7007/3/7">http://www.biomedcentral.com/1741-7007/3/7</a> for details).  Those edges that loosely connect nodes as defined by this similarity coefficient are removed.  The nodes connected by the remaining edges are clustered by transitive closure (single linkage clustering) and reported as OTUs.</p></div>
+<div class="paragraph"><p>The minimum phylogenetic distance between clustered nodes, and the minimum similarity coefficient between nodes in the graph are tuneable parameters. A README file containing instructions and sample data are provided.</p></div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_miscellaneous_remarks">Miscellaneous Remarks</h2>
+<div class="sectionbody">
+<div class="ulist"><ul>
+<li>
+<p>
+The bacterial 16S rRNA is the primary target of the ChimeraSlayer, WigeoN, and NAST-iEr utilities.
+</p>
+</li>
+<li>
+<p>
+Patrick Schloss' Mothur software includes a <a href="http://www.mothur.org/wiki/Chimera.slayer">chimera.slayer</a> method that is based on our ChimeraSlayer implementation, but it is <strong>not</strong> identical to it and will not produce identical results.  Although the mothur implementation is very fast and has similar accuracy performance metrics, it is not identical to the version provided here and it is not endorsed as a replacement.
+</p>
+</li>
+<li>
+<p>
+Robert Edgar has a new chimera detection tool available called <a href="http://www.drive5.com/uchime/">UCHIME</a> (manuscript in prep.).  We are actively collaborating with Robert on this development and we expect UCHIME to be a faster and more accurate chimera detection utility than ChimeraSlayer, and it has the advantage of being able to leverage abundance data and not require a reference database.
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_reference">Reference</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>ChimeraSlayer and companion tools are described in the following:</p></div>
+<div class="ulist"><ul>
+<li>
+<p>
+<strong>Chimeric 16S rRNA sequence formation and detection in Sanger and 454-pyrosequenced PCR amplicons.</strong>  Haas BJ, Gevers D, Earl A, Feldgarden M, Ward DV, Giannokous G, Ciulla D, Tabbaa D, Highlander SK, Sodergren E, Methe B, Desantis TZ, Petrosino JF, Knight R, Birren BW. <a href="http://genome.cshlp.org/content/21/3/494.long">Genome Res. 2011 Mar;21(3):494-504. Epub 2011 Jan 6</a>.
+</p>
+</li>
+</ul></div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_questions_comments_etc">Questions, comments, etc?</h2>
+<div class="sectionbody">
+<div class="paragraph"><p>Contact Brian Haas (bhaas at broadinstitute dot org)</p></div>
+<div class="paragraph"><p><strong>This project has been funded with Federal funds from the National Institute of Allergy and Infectious Diseases, National Institutes of Health.</strong></p></div>
+</div>
+</div>
+</div>
+<div id="footnotes"><hr /></div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2011-03-15 11:42:14 EDT
+</div>
+</div>
+</body>
+</html>

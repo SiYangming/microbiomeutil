@@ -1,0 +1,4 @@
+LUCY_DIR                   /Users/bhaas/BioIfx/lucy-1.20p/
+MEGABLAST_DIR         /Users/bhaas/BIN/
+AMOS_DIR	               /Users/bhaas/BioIfx/amos-2.0.8/bin/
+ 

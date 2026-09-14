@@ -1,0 +1,13 @@
+# 发布包本体：改由 Release 附件提供（127 MB）
+microbiomeutil-r20110519.tgz
+
+# 大型参考数据（>5 MB）：仅存在于 Release 附件中，不入代码树
+WigeoN/data/WigeoN.AllVsAllReferences.txt.gz
+RESOURCES/RDP/classifier_data_dir/genus_wordConditionalProbList.txt
+RESOURCES/rRNA16S.gold.NAST_ALIGNED.fasta
+ChimeraSlayer/__ChimeraConstructorToolkit/SeqSubstrates/rRNA16S.toChimerize.fasta.NAST
+RESOURCES/rRNA16S.gold.fasta
+ChimeraSlayer/__ChimeraConstructorToolkit/SeqSubstrates/rRNA16S.toChimerize.fasta
+
+# macOS 系统文件
+.DS_Store

@@ -1,0 +1,984 @@
+
+
+
+----------------------------------------------------------
+## Ref16S Assisted Assembly: G1867P35FN10.T0 G1867P35RN10.T0 G1867P35FN10.T1 G1867P35RN10.T1 G1867P35FN10.T2 G1867P35RN10.T2 G1867P35FN10.T3 G1867P35RN10.T3
+Running megablast to find best matching reference sequence
+CMD: megablast -i reads.seq -d /seq/microbiome/Tool-Dev/microbiomeutil/AmosCmp16Spipeline/sample_data/HMP_MOCK_16S_references.fasta -e 1e-20 -v 1 -b 1 -m 8
+G1867P35FN10.T0	153053_Staphylococcus_USA300_subsp	98.46	908	5	9	40	938	1519	612	0.0	1679
+G1867P35RN10.T0	153054_Staphylococcus_USA300_subsp	98.69	913	2	10	57	961	5	915	0.0	1705
+G1867P35FN10.T1	153053_Staphylococcus_USA300_subsp	98.56	903	4	9	44	941	1519	621	0.0	1677
+G1867P35RN10.T1	153054_Staphylococcus_USA300_subsp	98.65	889	1	11	58	946	5	882	0.0	1655
+G1867P35FN10.T2	153057_Staphylococcus_USA300_subsp	96.97	628	14	5	45	671	1519	896	0.0	1088
+G1867P35RN10.T2	153057_Staphylococcus_USA300_subsp	99.56	229	0	1	67	295	17	244	7e-127	 444
+G1867P35FN10.T3	153057_Staphylococcus_USA300_subsp	99.16	239	1	1	46	283	1519	1281	2e-130	 456
+G1867P35RN10.T3	153053_Staphylococcus_USA300_subsp	98.88	179	2	0	59	237	5	183	2e-95	 339
+
+Sorted scores for top hits:
+153057_Staphylococcus_USA300_subsp	1096
+153054_Staphylococcus_USA300_subsp	1802
+153053_Staphylococcus_USA300_subsp	1990
+
+Top hit: 153053_Staphylococcus_USA300_subspwith cum-score: 1990
+Running Lucy: lucy -output lucy.seq lucy.qual reads.seq reads.qual
+homologyTrimLucy(seqFile = lucy.seqqualFile=lucy.qualreferenceSeqFile=ref.seq
+RefHomologyCheck: megablast -i /tmp/tmpw9YOqY -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35FN10.T0	153053_Staphylococcus_USA300_subsp	98.46	908	5	9	40	938	1519	612	0.0	1679
+Match lends: 40
+Match rends: 938
+Match coordinates:40-938
+Lucy trim coordinates: 18-813
+Final trim: 40-813
+RefHomologyCheck: megablast -i /tmp/tmpPapj8e -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35RN10.T0	153053_Staphylococcus_USA300_subsp	98.58	913	3	10	57	961	5	915	0.0	1697
+Match lends: 57
+Match rends: 961
+Match coordinates:57-961
+Lucy trim coordinates: 20-876
+Final trim: 57-876
+RefHomologyCheck: megablast -i /tmp/tmpsK2JeF -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35FN10.T1	153053_Staphylococcus_USA300_subsp	98.56	903	4	9	44	941	1519	621	0.0	1677
+Match lends: 44
+Match rends: 941
+Match coordinates:44-941
+Lucy trim coordinates: 14-841
+Final trim: 44-841
+RefHomologyCheck: megablast -i /tmp/tmp1FSIRU -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35RN10.T1	153053_Staphylococcus_USA300_subsp	98.54	889	2	11	58	946	5	882	0.0	1647
+Match lends: 58
+Match rends: 946
+Match coordinates:58-946
+Lucy trim coordinates: 21-876
+Final trim: 58-876
+RefHomologyCheck: megablast -i /tmp/tmpauokc7 -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35FN10.T2	153053_Staphylococcus_USA300_subsp	96.97	628	14	5	45	671	1519	896	0.0	1088
+Match lends: 45
+Match rends: 671
+Match coordinates:45-671
+Lucy trim coordinates: 79-553
+Final trim: 79-553
+RefHomologyCheck: megablast -i /tmp/tmpg4Dqd_ -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35RN10.T2	153053_Staphylococcus_USA300_subsp	99.13	229	1	1	67	295	17	244	2e-126	 436
+Match lends: 67
+Match rends: 295
+Match coordinates:67-295
+Lucy trim coordinates: 74-291
+Final trim: 74-291
+RefHomologyCheck: megablast -i /tmp/tmpP9lU-j -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35FN10.T3	153053_Staphylococcus_USA300_subsp	99.16	239	1	1	46	283	1519	1281	2e-132	 456
+Match lends: 46
+Match rends: 283
+Match coordinates:46-283
+Lucy trim coordinates: 52-283
+Final trim: 52-283
+RefHomologyCheck: megablast -i /tmp/tmp66opQh -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35RN10.T3	153053_Staphylococcus_USA300_subsp	98.88	179	2	0	59	237	5	183	2e-97	 339
+Match lends: 59
+Match rends: 237
+Match coordinates:59-237
+Lucy trim coordinates: 28-211
+Final trim: 59-211
+Accessions homology and lucy trimmed: G1867P35FN10.T0,G1867P35RN10.T0,G1867P35FN10.T1,G1867P35RN10.T1,G1867P35FN10.T2,G1867P35RN10.T2,G1867P35FN10.T3,G1867P35RN10.T3
+AMOScmp: tarchive2amos -o raa lucy.seq.htrim.seq
+AMOScmp: AMOScmp -D TGT=raa.afg -D REF=ref.seq raa
+ASMcmp contig layout
+##1_153053_Staphylococcus_USA300_subsp 8 1519 bases, 00000000 checksum.
+#G1867P35RN10.T3(0) [] 154 bases, 00000000 checksum. {1 153} <1 153>
+#G1867P35RN10.T1(0) [] 821 bases, 00000000 checksum. {1 819} <1 818>
+#G1867P35RN10.T0(0) [] 824 bases, 00000000 checksum. {1 820} <1 821>
+#G1867P35RN10.T2(20) [] 218 bases, 00000000 checksum. {1 218} <20 236>
+#G1867P35FN10.T1(719) [RC] 800 bases, 00000000 checksum. {798 1} <718 1515>
+#G1867P35FN10.T0(744) [RC] 775 bases, 00000000 checksum. {774 1} <742 1515>
+#G1867P35FN10.T2(1010) [RC] 475 bases, 00000000 checksum. {475 1} <1008 1481>
+#G1867P35FN10.T3(1280) [RC] 232 bases, 00000000 checksum. {232 1} <1277 1508>
+
+The following reads were placed or assembled by AMOScmp: G1867P35RN10.T3,G1867P35RN10.T1,G1867P35RN10.T0,G1867P35RN10.T2,G1867P35FN10.T1,G1867P35FN10.T0,G1867P35FN10.T2,G1867P35FN10.T3
+AMOScmp scaffolding information:
+>153053_Staphylococcus_USA300_subsp 1 1515 1519
+1_153053_Staphylococcus_USA300_subsp BE 1515 0
+
+
+
+
+----------------------------------------------------------
+## Ref16S Assisted Assembly: G1867P35FN17.T0 G1867P35RN17.T0 G1867P35FN17.T1 G1867P35RN17.T1 G1867P35FN17.T2 G1867P35RN17.T2 G1867P35FN17.T3 G1867P35RN17.T3
+Running megablast to find best matching reference sequence
+CMD: megablast -i reads.seq -d /seq/microbiome/Tool-Dev/microbiomeutil/AmosCmp16Spipeline/sample_data/HMP_MOCK_16S_references.fasta -e 1e-20 -v 1 -b 1 -m 8
+G1867P35FN17.T0	205483_Acinetobacter_baumannii_str	97.81	866	2	17	42	891	1507	643	0.0	1548
+G1867P35RN17.T0	205483_Acinetobacter_baumannii_str	99.42	855	0	5	61	912	10	862	0.0	1649
+G1867P35FN17.T1	205483_Acinetobacter_baumannii_str	98.90	912	2	8	41	947	1507	599	0.0	1721
+G1867P35RN17.T1	205483_Acinetobacter_baumannii_str	98.66	896	1	11	61	947	10	903	0.0	1669
+G1867P35FN17.T2	205483_Acinetobacter_baumannii_str	95.22	523	9	16	45	566	1507	1000	0.0	 823
+G1867P35RN17.T2	205483_Acinetobacter_baumannii_str	95.90	195	7	1	67	260	24	218	6e-90	 321
+G1867P35FN17.T3	205483_Acinetobacter_baumannii_str	98.92	278	3	0	42	319	1507	1230	6e-152	 527
+G1867P35RN17.T3	205483_Acinetobacter_baumannii_str	99.45	181	0	1	61	240	10	190	2e-98	 349
+
+Sorted scores for top hits:
+205483_Acinetobacter_baumannii_str	4706
+
+Top hit: 205483_Acinetobacter_baumannii_strwith cum-score: 4706
+Running Lucy: lucy -output lucy.seq lucy.qual reads.seq reads.qual
+homologyTrimLucy(seqFile = lucy.seqqualFile=lucy.qualreferenceSeqFile=ref.seq
+RefHomologyCheck: megablast -i /tmp/tmpkY1Dmn -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35FN17.T0	205483_Acinetobacter_baumannii_str	97.81	866	2	17	42	891	1507	643	0.0	1548
+Match lends: 42
+Match rends: 891
+Match coordinates:42-891
+Lucy trim coordinates: 16-831
+Final trim: 42-831
+RefHomologyCheck: megablast -i /tmp/tmpAEUcdz -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35RN17.T0	205483_Acinetobacter_baumannii_str	99.42	855	0	5	61	912	10	862	0.0	1649
+Match lends: 61
+Match rends: 912
+Match coordinates:61-912
+Lucy trim coordinates: 14-878
+Final trim: 61-878
+RefHomologyCheck: megablast -i /tmp/tmpxWGmNH -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35FN17.T1	205483_Acinetobacter_baumannii_str	98.90	912	2	8	41	947	1507	599	0.0	1721
+Match lends: 41
+Match rends: 947
+Match coordinates:41-947
+Lucy trim coordinates: 20-871
+Final trim: 41-871
+RefHomologyCheck: megablast -i /tmp/tmpsvbZYb -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35RN17.T1	205483_Acinetobacter_baumannii_str	98.66	896	1	11	61	947	10	903	0.0	1669
+Match lends: 61
+Match rends: 947
+Match coordinates:61-947
+Lucy trim coordinates: 12-871
+Final trim: 61-871
+RefHomologyCheck: megablast -i /tmp/tmpuB5VB0 -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35FN17.T2	205483_Acinetobacter_baumannii_str	95.22	523	9	16	45	566	1507	1000	0.0	 823
+Match lends: 45
+Match rends: 566
+Match coordinates:45-566
+Lucy trim coordinates: 80-532
+Final trim: 80-532
+RefHomologyCheck: megablast -i /tmp/tmpkO3_ob -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35RN17.T2	205483_Acinetobacter_baumannii_str	95.90	195	7	1	67	260	24	218	6e-92	 321
+Match lends: 67
+Match rends: 260
+Match coordinates:67-260
+Lucy trim coordinates: 72-251
+Final trim: 72-251
+RefHomologyCheck: megablast -i /tmp/tmpBMs0xf -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35FN17.T3	205483_Acinetobacter_baumannii_str	98.92	278	3	0	42	319	1507	1230	6e-154	 527
+Match lends: 42
+Match rends: 319
+Match coordinates:42-319
+Lucy trim coordinates: 24-300
+Final trim: 42-300
+RefHomologyCheck: megablast -i /tmp/tmpZgtAbH -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35RN17.T3	205483_Acinetobacter_baumannii_str	99.45	181	0	1	61	240	10	190	2e-100	 349
+Match lends: 61
+Match rends: 240
+Match coordinates:61-240
+Lucy trim coordinates: 27-229
+Final trim: 61-229
+Accessions homology and lucy trimmed: G1867P35FN17.T0,G1867P35RN17.T0,G1867P35FN17.T1,G1867P35RN17.T1,G1867P35FN17.T2,G1867P35RN17.T2,G1867P35FN17.T3,G1867P35RN17.T3
+AMOScmp: tarchive2amos -o raa lucy.seq.htrim.seq
+AMOScmp: AMOScmp -D TGT=raa.afg -D REF=ref.seq raa
+ASMcmp contig layout
+##1_205483_Acinetobacter_baumannii_str 8 1508 bases, 00000000 checksum.
+#G1867P35RN17.T3(0) [] 169 bases, 00000000 checksum. {1 169} <1 169>
+#G1867P35RN17.T1(0) [] 813 bases, 00000000 checksum. {1 811} <1 813>
+#G1867P35RN17.T0(0) [] 818 bases, 00000000 checksum. {1 818} <1 818>
+#G1867P35RN17.T2(18) [] 181 bases, 00000000 checksum. {1 180} <19 199>
+#G1867P35FN17.T1(666) [RC] 842 bases, 00000000 checksum. {831 1} <667 1498>
+#G1867P35FN17.T0(703) [RC] 805 bases, 00000000 checksum. {790 1} <704 1498>
+#G1867P35FN17.T2(1021) [RC] 453 bases, 00000000 checksum. {453 1} <1022 1464>
+#G1867P35FN17.T3(1249) [RC] 259 bases, 00000000 checksum. {259 1} <1240 1498>
+
+The following reads were placed or assembled by AMOScmp: G1867P35RN17.T3,G1867P35RN17.T1,G1867P35RN17.T0,G1867P35RN17.T2,G1867P35FN17.T1,G1867P35FN17.T0,G1867P35FN17.T2,G1867P35FN17.T3
+AMOScmp scaffolding information:
+>205483_Acinetobacter_baumannii_str 1 1498 1507
+1_205483_Acinetobacter_baumannii_str BE 1498 0
+
+
+
+
+----------------------------------------------------------
+## Ref16S Assisted Assembly: G1867P37FF8.T0 G1867P37RF8.T0 G1867P37FF8.T1 G1867P37RF8.T1 G1867P37FF8.T2 G1867P37RF8.T2 G1867P37FF8.T3 G1867P37RF8.T3
+Running megablast to find best matching reference sequence
+CMD: megablast -i reads.seq -d /seq/microbiome/Tool-Dev/microbiomeutil/AmosCmp16Spipeline/sample_data/HMP_MOCK_16S_references.fasta -e 1e-20 -v 1 -b 1 -m 8
+G1867P37FF8.T0	205483_Acinetobacter_baumannii_str	99.34	905	0	6	41	941	1507	605	0.0	1740
+G1867P37RF8.T0	205483_Acinetobacter_baumannii_str	98.46	910	2	12	59	964	10	911	0.0	1681
+G1867P37FF8.T1	205483_Acinetobacter_baumannii_str	99.54	872	0	4	42	911	1507	638	0.0	1693
+G1867P37RF8.T1	205483_Acinetobacter_baumannii_str	98.62	871	0	12	58	918	10	878	0.0	1620
+G1867P37FF8.T2	205483_Acinetobacter_baumannii_str	99.35	306	1	1	44	349	1507	1203	2e-170	 589
+G1867P37RF8.T2	205483_Acinetobacter_baumannii_str	98.55	138	1	1	58	194	10	147	3e-70	 256
+G1867P37FF8.T3	205483_Acinetobacter_baumannii_str	98.91	457	3	2	46	502	1507	1053	0.0	 864
+G1867P37RF8.T3	205483_Acinetobacter_baumannii_str	97.17	283	6	2	81	362	27	308	3e-142	 496
+
+Sorted scores for top hits:
+205483_Acinetobacter_baumannii_str	4742
+
+Top hit: 205483_Acinetobacter_baumannii_strwith cum-score: 4742
+Running Lucy: lucy -output lucy.seq lucy.qual reads.seq reads.qual
+homologyTrimLucy(seqFile = lucy.seqqualFile=lucy.qualreferenceSeqFile=ref.seq
+RefHomologyCheck: megablast -i /tmp/tmpSz3Fbc -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FF8.T0	205483_Acinetobacter_baumannii_str	99.34	905	0	6	41	941	1507	605	0.0	1740
+Match lends: 41
+Match rends: 941
+Match coordinates:41-941
+Lucy trim coordinates: 18-860
+Final trim: 41-860
+RefHomologyCheck: megablast -i /tmp/tmpUQUTI9 -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RF8.T0	205483_Acinetobacter_baumannii_str	98.46	910	2	12	59	964	10	911	0.0	1681
+Match lends: 59
+Match rends: 964
+Match coordinates:59-964
+Lucy trim coordinates: 21-872
+Final trim: 59-872
+RefHomologyCheck: megablast -i /tmp/tmpIAPVrJ -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FF8.T1	205483_Acinetobacter_baumannii_str	99.54	872	0	4	42	911	1507	638	0.0	1693
+Match lends: 42
+Match rends: 911
+Match coordinates:42-911
+Lucy trim coordinates: 12-867
+Final trim: 42-867
+RefHomologyCheck: megablast -i /tmp/tmpXYlMsq -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RF8.T1	205483_Acinetobacter_baumannii_str	98.62	871	0	12	58	918	10	878	0.0	1620
+Match lends: 58
+Match rends: 918
+Match coordinates:58-918
+Lucy trim coordinates: 21-819
+Final trim: 58-819
+RefHomologyCheck: megablast -i /tmp/tmpkHqDKF -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FF8.T2	205483_Acinetobacter_baumannii_str	99.35	306	1	1	44	349	1507	1203	2e-172	 589
+Match lends: 44
+Match rends: 349
+Match coordinates:44-349
+Lucy trim coordinates: 29-338
+Final trim: 44-338
+RefHomologyCheck: megablast -i /tmp/tmp9c4Jjo -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RF8.T2	205483_Acinetobacter_baumannii_str	98.55	138	1	1	58	194	10	147	3e-72	 256
+Match lends: 58
+Match rends: 194
+Match coordinates:58-194
+Lucy trim coordinates: 75-174
+Final trim: 75-174
+RefHomologyCheck: megablast -i /tmp/tmp_vtUhv -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FF8.T3	205483_Acinetobacter_baumannii_str	98.91	457	3	2	46	502	1507	1053	0.0	 864
+Match lends: 46
+Match rends: 502
+Match coordinates:46-502
+Lucy trim coordinates: 25-468
+Final trim: 46-468
+RefHomologyCheck: megablast -i /tmp/tmppOBv7q -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RF8.T3	205483_Acinetobacter_baumannii_str	97.17	283	6	2	81	362	27	308	3e-144	 496
+Match lends: 81
+Match rends: 362
+Match coordinates:81-362
+Lucy trim coordinates: 93-358
+Final trim: 93-358
+Accessions homology and lucy trimmed: G1867P37FF8.T0,G1867P37RF8.T0,G1867P37FF8.T1,G1867P37RF8.T1,G1867P37FF8.T2,G1867P37RF8.T2,G1867P37FF8.T3,G1867P37RF8.T3
+AMOScmp: tarchive2amos -o raa lucy.seq.htrim.seq
+AMOScmp: AMOScmp -D TGT=raa.afg -D REF=ref.seq raa
+ASMcmp contig layout
+##1_205483_Acinetobacter_baumannii_str 8 1504 bases, 00000000 checksum.
+#G1867P37RF8.T1(0) [] 765 bases, 00000000 checksum. {1 762} <1 762>
+#G1867P37RF8.T0(0) [] 817 bases, 00000000 checksum. {1 814} <1 813>
+#G1867P37RF8.T2(17) [] 102 bases, 00000000 checksum. {1 100} <18 118>
+#G1867P37RF8.T3(29) [] 267 bases, 00000000 checksum. {1 266} <30 295>
+#G1867P37FF8.T1(671) [RC] 833 bases, 00000000 checksum. {826 1} <671 1498>
+#G1867P37FF8.T0(679) [RC] 825 bases, 00000000 checksum. {820 1} <679 1498>
+#G1867P37FF8.T3(1081) [RC] 423 bases, 00000000 checksum. {423 1} <1078 1498>
+#G1867P37FF8.T2(1209) [RC] 295 bases, 00000000 checksum. {295 1} <1204 1498>
+
+The following reads were placed or assembled by AMOScmp: G1867P37RF8.T1,G1867P37RF8.T0,G1867P37RF8.T2,G1867P37RF8.T3,G1867P37FF8.T1,G1867P37FF8.T0,G1867P37FF8.T3,G1867P37FF8.T2
+AMOScmp scaffolding information:
+>205483_Acinetobacter_baumannii_str 1 1500 1509
+1_205483_Acinetobacter_baumannii_str BE 1500 0
+
+
+
+
+----------------------------------------------------------
+## Ref16S Assisted Assembly: G1867P37FG14.T0 G1867P37RG14.T0 G1867P37FG14.T1 G1867P37RG14.T1 G1867P37FG14.T2 G1867P37RG14.T2 G1867P37FG14.T3 G1867P37RG14.T3
+Running megablast to find best matching reference sequence
+CMD: megablast -i reads.seq -d /seq/microbiome/Tool-Dev/microbiomeutil/AmosCmp16Spipeline/sample_data/HMP_MOCK_16S_references.fasta -e 1e-20 -v 1 -b 1 -m 8
+G1867P37FG14.T0	128430_Escherichia_coli_K12_str	99.08	874	1	7	41	910	1513	643	0.0	1661
+G1867P37RG14.T0	128428_Escherichia_coli_K12_str	99.08	870	0	8	59	926	11	874	0.0	1653
+G1867P37FG14.T1	128430_Escherichia_coli_K12_str	96.53	778	1	24	43	794	1513	736	0.0	1302
+G1867P37RG14.T1	128428_Escherichia_coli_K12_str	99.88	832	0	1	60	891	11	841	0.0	1639
+G1867P37FG14.T2	128430_Escherichia_coli_K12_str	98.73	393	3	2	43	434	1513	1122	0.0	 737
+G1867P37RG14.T2	128428_Escherichia_coli_K12_str	97.54	203	4	1	59	260	11	213	8e-102	 361
+G1867P37FG14.T3	128430_Escherichia_coli_K12_str	97.31	744	7	13	42	781	1513	779	0.0	1302
+G1867P37RG14.T3	128428_Escherichia_coli_K12_str	96.14	285	10	1	80	363	30	314	3e-136	 476
+
+Sorted scores for top hits:
+128428_Escherichia_coli_K12_str	2190
+128430_Escherichia_coli_K12_str	2789
+
+Top hit: 128430_Escherichia_coli_K12_strwith cum-score: 2789
+Running Lucy: lucy -output lucy.seq lucy.qual reads.seq reads.qual
+homologyTrimLucy(seqFile = lucy.seqqualFile=lucy.qualreferenceSeqFile=ref.seq
+RefHomologyCheck: megablast -i /tmp/tmp69mk6U -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FG14.T0	128430_Escherichia_coli_K12_str	99.08	874	1	7	41	910	1513	643	0.0	1661
+Match lends: 41
+Match rends: 910
+Match coordinates:41-910
+Lucy trim coordinates: 18-860
+Final trim: 41-860
+RefHomologyCheck: megablast -i /tmp/tmpF6nBNM -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RG14.T0	128430_Escherichia_coli_K12_str	98.16	870	8	8	59	926	11	874	0.0	1590
+Match lends: 59
+Match rends: 926
+Match coordinates:59-926
+Lucy trim coordinates: 12-806
+Final trim: 59-806
+RefHomologyCheck: megablast -i /tmp/tmp68bx8K -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FG14.T1	128430_Escherichia_coli_K12_str	96.53	778	1	24	43	794	1513	736	0.0	1302
+Match lends: 43
+Match rends: 794
+Match coordinates:43-794
+Lucy trim coordinates: 20-688
+Final trim: 43-688
+RefHomologyCheck: megablast -i /tmp/tmp34iF-Y -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RG14.T1	128430_Escherichia_coli_K12_str	98.92	832	8	1	60	891	11	841	0.0	1576
+Match lends: 60
+Match rends: 891
+Match coordinates:60-891
+Lucy trim coordinates: 11-868
+Final trim: 60-868
+RefHomologyCheck: megablast -i /tmp/tmpCaf0oE -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FG14.T2	128430_Escherichia_coli_K12_str	98.73	393	3	2	43	434	1513	1122	0.0	 737
+Match lends: 43
+Match rends: 434
+Match coordinates:43-434
+Lucy trim coordinates: 29-428
+Final trim: 43-428
+RefHomologyCheck: megablast -i /tmp/tmp1YIZzU -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RG14.T2	128430_Escherichia_coli_K12_str	95.57	203	8	1	59	260	11	213	3e-94	 329
+Match lends: 59
+Match rends: 260
+Match coordinates:59-260
+Lucy trim coordinates: 22-252
+Final trim: 59-252
+RefHomologyCheck: megablast -i /tmp/tmpomMIsQ -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FG14.T3	128430_Escherichia_coli_K12_str	97.31	744	7	13	42	781	1513	779	0.0	1302
+Match lends: 42
+Match rends: 781
+Match coordinates:42-781
+Lucy trim coordinates: 19-685
+Final trim: 42-685
+RefHomologyCheck: megablast -i /tmp/tmpQUgrH2 -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RG14.T3	128430_Escherichia_coli_K12_str	93.33	285	18	1	80	363	30	314	3e-119	 412
+Match lends: 80
+Match rends: 363
+Match coordinates:80-363
+Lucy trim coordinates: 119-361
+Final trim: 119-361
+Accessions homology and lucy trimmed: G1867P37FG14.T0,G1867P37RG14.T0,G1867P37FG14.T1,G1867P37RG14.T1,G1867P37FG14.T2,G1867P37RG14.T2,G1867P37FG14.T3,G1867P37RG14.T3
+AMOScmp: tarchive2amos -o raa lucy.seq.htrim.seq
+AMOScmp: AMOScmp -D TGT=raa.afg -D REF=ref.seq raa
+ASMcmp contig layout
+##1_128430_Escherichia_coli_K12_str 8 1506 bases, 00000000 checksum.
+#G1867P37RG14.T2(0) [] 195 bases, 00000000 checksum. {1 194} <1 195>
+#G1867P37RG14.T0(0) [] 748 bases, 00000000 checksum. {1 748} <1 748>
+#G1867P37RG14.T1(0) [] 809 bases, 00000000 checksum. {1 809} <1 809>
+#G1867P37RG14.T3(58) [] 244 bases, 00000000 checksum. {1 243} <59 302>
+#G1867P37FG14.T0(681) [RC] 825 bases, 00000000 checksum. {820 1} <682 1503>
+#G1867P37FG14.T1(854) [RC] 652 bases, 00000000 checksum. {646 1} <855 1503>
+#G1867P37FG14.T3(861) [RC] 645 bases, 00000000 checksum. {644 1} <862 1503>
+#G1867P37FG14.T2(1119) [RC] 387 bases, 00000000 checksum. {386 1} <1118 1503>
+
+The following reads were placed or assembled by AMOScmp: G1867P37RG14.T2,G1867P37RG14.T0,G1867P37RG14.T1,G1867P37RG14.T3,G1867P37FG14.T0,G1867P37FG14.T1,G1867P37FG14.T3,G1867P37FG14.T2
+AMOScmp scaffolding information:
+>128430_Escherichia_coli_K12_str 1 1505 1515
+1_128430_Escherichia_coli_K12_str BE 1505 0
+
+
+
+
+----------------------------------------------------------
+## Ref16S Assisted Assembly: G1867P37FG16.T0 G1867P37RG16.T0 G1867P37FG16.T1 G1867P37RG16.T1 G1867P37FG16.T2 G1867P37RG16.T2 G1867P37FG16.T3 G1867P37RG16.T3
+Running megablast to find best matching reference sequence
+CMD: megablast -i reads.seq -d /seq/microbiome/Tool-Dev/microbiomeutil/AmosCmp16Spipeline/sample_data/HMP_MOCK_16S_references.fasta -e 1e-20 -v 1 -b 1 -m 8
+G1867P37FG16.T0	128850_Staphylococcus_epidermidis_str	99.19	864	2	5	42	905	1518	660	0.0	1651
+G1867P37RG16.T0	128850_Staphylococcus_epidermidis_str	98.74	871	2	9	58	924	7	872	0.0	1629
+G1867P37FG16.T1	128850_Staphylococcus_epidermidis_str	96.18	785	3	27	42	799	1518	734	0.0	1290
+G1867P37RG16.T1	128850_Staphylococcus_epidermidis_str	99.39	826	1	4	57	880	7	830	0.0	1594
+G1867P37FG16.T2	128853_Staphylococcus_epidermidis_str	98.63	439	3	3	48	486	1518	1083	0.0	 819
+G1867P37RG16.T2	77455_Staphylococcus_epidermidis_str	98.98	196	1	1	67	261	17	212	9e-105	 371
+G1867P37FG16.T3	128850_Staphylococcus_epidermidis_str	97.47	593	8	7	43	635	1518	933	0.0	1049
+G1867P37RG16.T3	77455_Staphylococcus_epidermidis_str	95.95	247	5	5	69	313	17	260	7e-115	 404
+
+Sorted scores for top hits:
+128853_Staphylococcus_epidermidis_str	439
+77455_Staphylococcus_epidermidis_str	443
+128850_Staphylococcus_epidermidis_str	3939
+
+Top hit: 128850_Staphylococcus_epidermidis_strwith cum-score: 3939
+Running Lucy: lucy -output lucy.seq lucy.qual reads.seq reads.qual
+homologyTrimLucy(seqFile = lucy.seqqualFile=lucy.qualreferenceSeqFile=ref.seq
+RefHomologyCheck: megablast -i /tmp/tmpltB5-W -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FG16.T0	128850_Staphylococcus_epidermidis_str	99.19	864	2	5	42	905	1518	660	0.0	1651
+Match lends: 42
+Match rends: 905
+Match coordinates:42-905
+Lucy trim coordinates: 12-832
+Final trim: 42-832
+RefHomologyCheck: megablast -i /tmp/tmptXXMRV -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RG16.T0	128850_Staphylococcus_epidermidis_str	98.74	871	2	9	58	924	7	872	0.0	1629
+Match lends: 58
+Match rends: 924
+Match coordinates:58-924
+Lucy trim coordinates: 13-905
+Final trim: 58-905
+RefHomologyCheck: megablast -i /tmp/tmpoLuCOX -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FG16.T1	128850_Staphylococcus_epidermidis_str	96.18	785	3	27	42	799	1518	734	0.0	1290
+Match lends: 42
+Match rends: 799
+Match coordinates:42-799
+Lucy trim coordinates: 20-707
+Final trim: 42-707
+RefHomologyCheck: megablast -i /tmp/tmpEMKVj_ -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RG16.T1	128850_Staphylococcus_epidermidis_str	99.39	826	1	4	57	880	7	830	0.0	1594
+Match lends: 57
+Match rends: 880
+Match coordinates:57-880
+Lucy trim coordinates: 11-858
+Final trim: 57-858
+RefHomologyCheck: megablast -i /tmp/tmp0jmD9n -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FG16.T2	128850_Staphylococcus_epidermidis_str	98.63	439	3	3	48	486	1518	1083	0.0	 819
+Match lends: 48
+Match rends: 486
+Match coordinates:48-486
+Lucy trim coordinates: 25-472
+Final trim: 48-472
+RefHomologyCheck: megablast -i /tmp/tmppNBR7Q -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RG16.T2	128850_Staphylococcus_epidermidis_str	98.98	196	1	1	67	261	17	212	9e-107	 371
+Match lends: 67
+Match rends: 261
+Match coordinates:67-261
+Lucy trim coordinates: 22-259
+Final trim: 67-259
+RefHomologyCheck: megablast -i /tmp/tmpXm4fJ5 -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FG16.T3	128850_Staphylococcus_epidermidis_str	97.47	593	8	7	43	635	1518	933	0.0	1049
+Match lends: 43
+Match rends: 635
+Match coordinates:43-635
+Lucy trim coordinates: 23-586
+Final trim: 43-586
+RefHomologyCheck: megablast -i /tmp/tmpHPrbAc -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RG16.T3	128850_Staphylococcus_epidermidis_str	95.95	247	5	5	69	313	17	260	7e-117	 404
+Match lends: 69
+Match rends: 313
+Match coordinates:69-313
+Lucy trim coordinates: 26-285
+Final trim: 69-285
+Accessions homology and lucy trimmed: G1867P37FG16.T0,G1867P37RG16.T0,G1867P37FG16.T1,G1867P37RG16.T1,G1867P37FG16.T2,G1867P37RG16.T2,G1867P37FG16.T3,G1867P37RG16.T3
+AMOScmp: tarchive2amos -o raa lucy.seq.htrim.seq
+AMOScmp: AMOScmp -D TGT=raa.afg -D REF=ref.seq raa
+ASMcmp contig layout
+##1_128850_Staphylococcus_epidermidis_str 8 1525 bases, 00000000 checksum.
+#G1867P37RG16.T1(0) [] 808 bases, 00000000 checksum. {1 802} <1 804>
+#G1867P37RG16.T0(0) [] 854 bases, 00000000 checksum. {1 848} <1 849>
+#G1867P37RG16.T2(10) [] 195 bases, 00000000 checksum. {1 193} <11 204>
+#G1867P37RG16.T3(10) [] 219 bases, 00000000 checksum. {1 217} <11 227>
+#G1867P37FG16.T0(723) [RC] 802 bases, 00000000 checksum. {791 1} <722 1511>
+#G1867P37FG16.T1(837) [RC] 688 bases, 00000000 checksum. {666 1} <834 1511>
+#G1867P37FG16.T3(978) [RC] 547 bases, 00000000 checksum. {544 1} <973 1511>
+#G1867P37FG16.T2(1098) [RC] 427 bases, 00000000 checksum. {425 1} <1090 1511>
+
+The following reads were placed or assembled by AMOScmp: G1867P37RG16.T1,G1867P37RG16.T0,G1867P37RG16.T2,G1867P37RG16.T3,G1867P37FG16.T0,G1867P37FG16.T1,G1867P37FG16.T3,G1867P37FG16.T2
+AMOScmp scaffolding information:
+>128850_Staphylococcus_epidermidis_str 1 1516 1522
+1_128850_Staphylococcus_epidermidis_str BE 1516 0
+
+
+
+
+----------------------------------------------------------
+## Ref16S Assisted Assembly: G1867P37FG12.T0 G1867P37RG12.T0 G1867P37FG12.T1 G1867P37RG12.T1 G1867P37FG12.T2 G1867P37RG12.T2 G1867P37FG12.T3 G1867P37RG12.T3
+Running megablast to find best matching reference sequence
+CMD: megablast -i reads.seq -d /seq/microbiome/Tool-Dev/microbiomeutil/AmosCmp16Spipeline/sample_data/HMP_MOCK_16S_references.fasta -e 1e-20 -v 1 -b 1 -m 8
+G1867P37FG12.T0	153053_Staphylococcus_USA300_subsp	98.87	885	1	9	41	922	1519	641	0.0	1665
+G1867P37RG12.T0	153054_Staphylococcus_USA300_subsp	99.09	877	1	7	58	932	7	878	0.0	1667
+G1867P37FG12.T1	153053_Staphylococcus_USA300_subsp	98.82	848	1	9	40	880	1519	674	0.0	1592
+G1867P37RG12.T1	153054_Staphylococcus_USA300_subsp	99.29	841	2	4	56	892	7	847	0.0	1616
+G1867P37FG12.T2	153053_Staphylococcus_USA300_subsp	98.92	461	3	2	43	503	1519	1061	0.0	 872
+G1867P37RG12.T2	153057_Staphylococcus_USA300_subsp	98.45	258	3	1	58	314	7	264	5e-137	 478
+G1867P37FG12.T3	153053_Staphylococcus_USA300_subsp	97.93	482	6	4	41	522	1519	1042	0.0	 872
+G1867P37RG12.T3	153057_Staphylococcus_USA300_subsp	98.84	259	1	2	58	315	7	264	6e-140	 488
+
+Sorted scores for top hits:
+153057_Staphylococcus_USA300_subsp	517
+153054_Staphylococcus_USA300_subsp	1718
+153053_Staphylococcus_USA300_subsp	2676
+
+Top hit: 153053_Staphylococcus_USA300_subspwith cum-score: 2676
+Running Lucy: lucy -output lucy.seq lucy.qual reads.seq reads.qual
+homologyTrimLucy(seqFile = lucy.seqqualFile=lucy.qualreferenceSeqFile=ref.seq
+RefHomologyCheck: megablast -i /tmp/tmpSLuErO -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FG12.T0	153053_Staphylococcus_USA300_subsp	98.87	885	1	9	41	922	1519	641	0.0	1665
+Match lends: 41
+Match rends: 922
+Match coordinates:41-922
+Lucy trim coordinates: 14-825
+Final trim: 41-825
+RefHomologyCheck: megablast -i /tmp/tmpYKYjwd -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RG12.T0	153053_Staphylococcus_USA300_subsp	98.97	877	2	7	58	932	7	878	0.0	1659
+Match lends: 58
+Match rends: 932
+Match coordinates:58-932
+Lucy trim coordinates: 14-861
+Final trim: 58-861
+RefHomologyCheck: megablast -i /tmp/tmpm8kWx- -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FG12.T1	153053_Staphylococcus_USA300_subsp	98.82	848	1	9	40	880	1519	674	0.0	1592
+Match lends: 40
+Match rends: 880
+Match coordinates:40-880
+Lucy trim coordinates: 13-807
+Final trim: 40-807
+RefHomologyCheck: megablast -i /tmp/tmpIAgwGZ -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RG12.T1	153053_Staphylococcus_USA300_subsp	99.17	841	3	4	56	892	7	847	0.0	1608
+Match lends: 56
+Match rends: 892
+Match coordinates:56-892
+Lucy trim coordinates: 19-845
+Final trim: 56-845
+RefHomologyCheck: megablast -i /tmp/tmptrG-51 -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FG12.T2	153053_Staphylococcus_USA300_subsp	98.92	461	3	2	43	503	1519	1061	0.0	 872
+Match lends: 43
+Match rends: 503
+Match coordinates:43-503
+Lucy trim coordinates: 31-494
+Final trim: 43-494
+RefHomologyCheck: megablast -i /tmp/tmpdugmeU -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RG12.T2	153053_Staphylococcus_USA300_subsp	98.06	258	4	1	58	314	7	264	1e-136	 470
+Match lends: 58
+Match rends: 314
+Match coordinates:58-314
+Lucy trim coordinates: 26-284
+Final trim: 58-284
+RefHomologyCheck: megablast -i /tmp/tmpg7QKX7 -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FG12.T3	153053_Staphylococcus_USA300_subsp	97.93	482	6	4	41	522	1519	1042	0.0	 872
+Match lends: 41
+Match rends: 522
+Match coordinates:41-522
+Lucy trim coordinates: 29-500
+Final trim: 41-500
+RefHomologyCheck: megablast -i /tmp/tmpiB6nOf -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RG12.T3	153053_Staphylococcus_USA300_subsp	98.46	259	2	2	58	315	7	264	1e-139	 480
+Match lends: 58
+Match rends: 315
+Match coordinates:58-315
+Lucy trim coordinates: 24-299
+Final trim: 58-299
+Accessions homology and lucy trimmed: G1867P37FG12.T0,G1867P37RG12.T0,G1867P37FG12.T1,G1867P37RG12.T1,G1867P37FG12.T2,G1867P37RG12.T2,G1867P37FG12.T3,G1867P37RG12.T3
+AMOScmp: tarchive2amos -o raa lucy.seq.htrim.seq
+AMOScmp: AMOScmp -D TGT=raa.afg -D REF=ref.seq raa
+ASMcmp contig layout
+##1_153053_Staphylococcus_USA300_subsp 8 1520 bases, 00000000 checksum.
+#G1867P37RG12.T2(0) [] 228 bases, 00000000 checksum. {1 227} <1 228>
+#G1867P37RG12.T3(0) [] 242 bases, 00000000 checksum. {1 242} <1 242>
+#G1867P37RG12.T1(0) [] 795 bases, 00000000 checksum. {1 790} <1 794>
+#G1867P37RG12.T0(0) [] 806 bases, 00000000 checksum. {1 804} <1 805>
+#G1867P37FG12.T0(729) [RC] 791 bases, 00000000 checksum. {785 1} <730 1513>
+#G1867P37FG12.T1(745) [RC] 775 bases, 00000000 checksum. {768 1} <746 1513>
+#G1867P37FG12.T3(1058) [RC] 462 bases, 00000000 checksum. {460 1} <1057 1513>
+#G1867P37FG12.T2(1065) [RC] 455 bases, 00000000 checksum. {452 1} <1064 1513>
+
+The following reads were placed or assembled by AMOScmp: G1867P37RG12.T2,G1867P37RG12.T3,G1867P37RG12.T1,G1867P37RG12.T0,G1867P37FG12.T0,G1867P37FG12.T1,G1867P37FG12.T3,G1867P37FG12.T2
+AMOScmp scaffolding information:
+>153053_Staphylococcus_USA300_subsp 1 1516 1522
+1_153053_Staphylococcus_USA300_subsp BE 1516 0
+
+
+
+
+----------------------------------------------------------
+## Ref16S Assisted Assembly: G1867P36FL23.T0 G1867P36RL23.T0 G1867P36FL23.T1 G1867P36RL23.T1 G1867P36FL23.T2 G1867P36RL23.T2 G1867P36FL23.T3 G1867P36RL23.T3
+Running megablast to find best matching reference sequence
+CMD: megablast -i reads.seq -d /seq/microbiome/Tool-Dev/microbiomeutil/AmosCmp16Spipeline/sample_data/HMP_MOCK_16S_references.fasta -e 1e-20 -v 1 -b 1 -m 8
+G1867P36FL23.T0	356692_Clostridium_beijerinckii_str	96.12	695	2	24	38	707	1481	787	0.0	1138
+G1867P36RL23.T0	356695_Clostridium_beijerinckii_str	99.35	770	1	4	59	827	8	774	0.0	1483
+G1867P36FL23.T1	356692_Clostridium_beijerinckii_str	98.08	886	1	15	42	923	1481	608	0.0	1606
+G1867P36RL23.T1	356695_Clostridium_beijerinckii_str	98.47	847	4	9	59	904	8	846	0.0	1566
+G1867P36FL23.T2	356692_Clostridium_beijerinckii_str	98.80	834	1	9	44	868	1481	648	0.0	1564
+G1867P36RL23.T2	356695_Clostridium_beijerinckii_str	98.63	805	0	11	58	860	8	803	0.0	1497
+G1867P36FL23.T3	356693_Clostridium_beijerinckii_str	99.19	495	3	1	44	538	1480	987	0.0	 948
+G1867P36RL23.T3	356695_Clostridium_beijerinckii_str	99.44	360	2	0	85	444	23	382	0.0	 698
+
+Sorted scores for top hits:
+356693_Clostridium_beijerinckii_str	495
+356692_Clostridium_beijerinckii_str	2415
+356695_Clostridium_beijerinckii_str	2782
+
+Top hit: 356695_Clostridium_beijerinckii_strwith cum-score: 2782
+Running Lucy: lucy -output lucy.seq lucy.qual reads.seq reads.qual
+homologyTrimLucy(seqFile = lucy.seqqualFile=lucy.qualreferenceSeqFile=ref.seq
+RefHomologyCheck: megablast -i /tmp/tmpO4BVnm -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P36FL23.T0	356695_Clostridium_beijerinckii_str	96.12	695	2	24	38	707	1480	786	0.0	1138
+Match lends: 38
+Match rends: 707
+Match coordinates:38-707
+Lucy trim coordinates: 36-591
+Final trim: 38-591
+RefHomologyCheck: megablast -i /tmp/tmpxDqNDu -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P36RL23.T0	356695_Clostridium_beijerinckii_str	99.35	770	1	4	59	827	8	774	0.0	1483
+Match lends: 59
+Match rends: 827
+Match coordinates:59-827
+Lucy trim coordinates: 25-772
+Final trim: 59-772
+RefHomologyCheck: megablast -i /tmp/tmpbbA5Nn -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P36FL23.T1	356695_Clostridium_beijerinckii_str	98.08	886	1	15	42	923	1480	607	0.0	1606
+Match lends: 42
+Match rends: 923
+Match coordinates:42-923
+Lucy trim coordinates: 12-785
+Final trim: 42-785
+RefHomologyCheck: megablast -i /tmp/tmpP3BmH5 -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P36RL23.T1	356695_Clostridium_beijerinckii_str	98.47	847	4	9	59	904	8	846	0.0	1566
+Match lends: 59
+Match rends: 904
+Match coordinates:59-904
+Lucy trim coordinates: 20-830
+Final trim: 59-830
+RefHomologyCheck: megablast -i /tmp/tmp7MZHqv -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P36FL23.T2	356695_Clostridium_beijerinckii_str	98.80	834	1	9	44	868	1480	647	0.0	1564
+Match lends: 44
+Match rends: 868
+Match coordinates:44-868
+Lucy trim coordinates: 18-817
+Final trim: 44-817
+RefHomologyCheck: megablast -i /tmp/tmpU3QD8P -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P36RL23.T2	356695_Clostridium_beijerinckii_str	98.63	805	0	11	58	860	8	803	0.0	1497
+Match lends: 58
+Match rends: 860
+Match coordinates:58-860
+Lucy trim coordinates: 20-787
+Final trim: 58-787
+RefHomologyCheck: megablast -i /tmp/tmpUwHGOU -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P36FL23.T3	356695_Clostridium_beijerinckii_str	99.19	495	3	1	44	538	1480	987	0.0	 948
+Match lends: 44
+Match rends: 538
+Match coordinates:44-538
+Lucy trim coordinates: 21-530
+Final trim: 44-530
+RefHomologyCheck: megablast -i /tmp/tmpmckTxG -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P36RL23.T3	356695_Clostridium_beijerinckii_str	99.44	360	2	0	85	444	23	382	0.0	 698
+Match lends: 85
+Match rends: 444
+Match coordinates:85-444
+Lucy trim coordinates: 98-415
+Final trim: 98-415
+Accessions homology and lucy trimmed: G1867P36FL23.T0,G1867P36RL23.T0,G1867P36FL23.T1,G1867P36RL23.T1,G1867P36FL23.T2,G1867P36RL23.T2,G1867P36FL23.T3,G1867P36RL23.T3
+AMOScmp: tarchive2amos -o raa lucy.seq.htrim.seq
+AMOScmp: AMOScmp -D TGT=raa.afg -D REF=ref.seq raa
+ASMcmp contig layout
+##1_356695_Clostridium_beijerinckii_str 8 1480 bases, 00000000 checksum.
+#G1867P36RL23.T0(0) [] 717 bases, 00000000 checksum. {1 714} <1 715>
+#G1867P36RL23.T2(0) [] 732 bases, 00000000 checksum. {1 730} <1 730>
+#G1867P36RL23.T1(0) [] 773 bases, 00000000 checksum. {1 772} <1 768>
+#G1867P36RL23.T3(29) [] 318 bases, 00000000 checksum. {1 318} <29 346>
+#G1867P36FL23.T2(696) [RC] 784 bases, 00000000 checksum. {774 1} <695 1474>
+#G1867P36FL23.T1(731) [RC] 749 bases, 00000000 checksum. {744 1} <730 1474>
+#G1867P36FL23.T0(925) [RC] 555 bases, 00000000 checksum. {554 1} <921 1474>
+#G1867P36FL23.T3(993) [RC] 487 bases, 00000000 checksum. {487 1} <989 1474>
+
+The following reads were placed or assembled by AMOScmp: G1867P36RL23.T0,G1867P36RL23.T2,G1867P36RL23.T1,G1867P36RL23.T3,G1867P36FL23.T2,G1867P36FL23.T1,G1867P36FL23.T0,G1867P36FL23.T3
+AMOScmp scaffolding information:
+>356695_Clostridium_beijerinckii_str 1 1474 1481
+1_356695_Clostridium_beijerinckii_str BE 1474 0
+
+
+
+
+----------------------------------------------------------
+## Ref16S Assisted Assembly: G1867P36FL21.T0 G1867P36RL21.T0 G1867P36FL21.T1 G1867P36RL21.T1 G1867P36FL21.T2 G1867P36RL21.T2 G1867P36FL21.T3 G1867P36RL21.T3
+Running megablast to find best matching reference sequence
+CMD: megablast -i reads.seq -d /seq/microbiome/Tool-Dev/microbiomeutil/AmosCmp16Spipeline/sample_data/HMP_MOCK_16S_references.fasta -e 1e-20 -v 1 -b 1 -m 8
+G1867P36FL21.T0	153054_Staphylococcus_USA300_subsp	99.77	864	0	2	44	907	7	868	0.0	1695
+G1867P36RL21.T0	153053_Staphylococcus_USA300_subsp	99.41	851	1	4	57	906	1519	672	0.0	1643
+G1867P36FL21.T1	153054_Staphylococcus_USA300_subsp	98.99	888	1	8	45	930	7	888	0.0	1681
+G1867P36RL21.T1	153053_Staphylococcus_USA300_subsp	99.19	863	2	5	57	916	1519	659	0.0	1649
+G1867P36FL21.T2	153054_Staphylococcus_USA300_subsp	99.76	850	0	2	45	893	7	855	0.0	1667
+G1867P36RL21.T2	153053_Staphylococcus_USA300_subsp	99.50	802	0	4	72	871	1504	705	0.0	1554
+G1867P36FL21.T3	153057_Staphylococcus_USA300_subsp	98.66	149	2	0	46	194	7	155	2e-77	 279
+G1867P36RL21.T3	153057_Staphylococcus_USA300_subsp	98.03	203	4	0	76	278	1504	1302	8e-105	 371
+
+Sorted scores for top hits:
+153057_Staphylococcus_USA300_subsp	352
+153053_Staphylococcus_USA300_subsp	2516
+153054_Staphylococcus_USA300_subsp	2602
+
+Top hit: 153054_Staphylococcus_USA300_subspwith cum-score: 2602
+Running Lucy: lucy -output lucy.seq lucy.qual reads.seq reads.qual
+homologyTrimLucy(seqFile = lucy.seqqualFile=lucy.qualreferenceSeqFile=ref.seq
+RefHomologyCheck: megablast -i /tmp/tmpo1Eh5V -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P36FL21.T0	153054_Staphylococcus_USA300_subsp	99.77	864	0	2	44	907	7	868	0.0	1695
+Match lends: 44
+Match rends: 907
+Match coordinates:44-907
+Lucy trim coordinates: 14-840
+Final trim: 44-840
+RefHomologyCheck: megablast -i /tmp/tmpxD896k -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P36RL21.T0	153054_Staphylococcus_USA300_subsp	99.41	851	1	4	57	906	1519	672	0.0	1643
+Match lends: 57
+Match rends: 906
+Match coordinates:57-906
+Lucy trim coordinates: 21-840
+Final trim: 57-840
+RefHomologyCheck: megablast -i /tmp/tmp7WAGkO -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P36FL21.T1	153054_Staphylococcus_USA300_subsp	98.99	888	1	8	45	930	7	888	0.0	1681
+Match lends: 45
+Match rends: 930
+Match coordinates:45-930
+Lucy trim coordinates: 15-862
+Final trim: 45-862
+RefHomologyCheck: megablast -i /tmp/tmpi_dPm_ -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P36RL21.T1	153054_Staphylococcus_USA300_subsp	99.19	863	2	5	57	916	1519	659	0.0	1649
+Match lends: 57
+Match rends: 916
+Match coordinates:57-916
+Lucy trim coordinates: 21-868
+Final trim: 57-868
+RefHomologyCheck: megablast -i /tmp/tmpbhQkVs -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P36FL21.T2	153054_Staphylococcus_USA300_subsp	99.76	850	0	2	45	893	7	855	0.0	1667
+Match lends: 45
+Match rends: 893
+Match coordinates:45-893
+Lucy trim coordinates: 12-883
+Final trim: 45-883
+RefHomologyCheck: megablast -i /tmp/tmp0iDqrc -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P36RL21.T2	153054_Staphylococcus_USA300_subsp	99.50	802	0	4	72	871	1504	705	0.0	1554
+Match lends: 72
+Match rends: 871
+Match coordinates:72-871
+Lucy trim coordinates: 18-836
+Final trim: 72-836
+RefHomologyCheck: megablast -i /tmp/tmpYroPL5 -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P36FL21.T3	153054_Staphylococcus_USA300_subsp	98.66	149	2	0	46	194	7	155	2e-79	 279
+Match lends: 46
+Match rends: 194
+Match coordinates:46-194
+Lucy trim coordinates: 76-189
+Final trim: 76-189
+RefHomologyCheck: megablast -i /tmp/tmp6iqvAz -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P36RL21.T3	153054_Staphylococcus_USA300_subsp	98.03	203	4	0	76	278	1504	1302	8e-107	 371
+Match lends: 76
+Match rends: 278
+Match coordinates:76-278
+Lucy trim coordinates: 23-242
+Final trim: 76-242
+Accessions homology and lucy trimmed: G1867P36FL21.T0,G1867P36RL21.T0,G1867P36FL21.T1,G1867P36RL21.T1,G1867P36FL21.T2,G1867P36RL21.T2,G1867P36FL21.T3,G1867P36RL21.T3
+AMOScmp: tarchive2amos -o raa lucy.seq.htrim.seq
+AMOScmp: AMOScmp -D TGT=raa.afg -D REF=ref.seq raa
+ASMcmp contig layout
+##1_153054_Staphylococcus_USA300_subsp 8 1516 bases, 00000000 checksum.
+#G1867P36FL21.T0(0) [] 800 bases, 00000000 checksum. {1 797} <1 797>
+#G1867P36FL21.T1(0) [] 819 bases, 00000000 checksum. {1 818} <1 816>
+#G1867P36FL21.T2(0) [] 843 bases, 00000000 checksum. {1 839} <1 840>
+#G1867P36FL21.T3(30) [] 114 bases, 00000000 checksum. {1 114} <31 144>
+#G1867P36RL21.T1(700) [RC] 816 bases, 00000000 checksum. {812 1} <700 1513>
+#G1867P36RL21.T0(731) [RC] 785 bases, 00000000 checksum. {784 1} <730 1513>
+#G1867P36RL21.T2(733) [RC] 768 bases, 00000000 checksum. {765 1} <732 1498>
+#G1867P36RL21.T3(1334) [RC] 167 bases, 00000000 checksum. {167 1} <1332 1498>
+
+The following reads were placed or assembled by AMOScmp: G1867P36FL21.T0,G1867P36FL21.T1,G1867P36FL21.T2,G1867P36FL21.T3,G1867P36RL21.T1,G1867P36RL21.T0,G1867P36RL21.T2,G1867P36RL21.T3
+AMOScmp scaffolding information:
+>153054_Staphylococcus_USA300_subsp 1 1513 1519
+1_153054_Staphylococcus_USA300_subsp BE 1513 0
+
+
+
+
+----------------------------------------------------------
+## Ref16S Assisted Assembly: G1867P35FN20.T0 G1867P35RN20.T0 G1867P35FN20.T1 G1867P35RN20.T1 G1867P35FN20.T2 G1867P35RN20.T2 G1867P35FN20.T3 G1867P35RN20.T3
+Running megablast to find best matching reference sequence
+CMD: megablast -i reads.seq -d /seq/microbiome/Tool-Dev/microbiomeutil/AmosCmp16Spipeline/sample_data/HMP_MOCK_16S_references.fasta -e 1e-20 -v 1 -b 1 -m 8
+G1867P35FN20.T0	153053_Staphylococcus_USA300_subsp	97.80	910	2	18	48	947	1519	618	0.0	1627
+G1867P35RN20.T0	153054_Staphylococcus_USA300_subsp	98.26	919	7	9	60	972	7	922	0.0	1685
+G1867P35FN20.T1	153053_Staphylococcus_USA300_subsp	98.88	894	2	8	42	931	1519	630	0.0	1685
+G1867P35RN20.T1	153054_Staphylococcus_USA300_subsp	98.86	874	4	6	59	929	7	877	0.0	1647
+G1867P35FN20.T2	153053_Staphylococcus_USA300_subsp	94.51	492	9	18	46	535	1519	1044	0.0	 743
+G1867P35RN20.T2	153057_Staphylococcus_USA300_subsp	97.03	202	5	1	74	274	21	222	2e-98	 351
+G1867P35FN20.T3	153057_Staphylococcus_USA300_subsp	92.77	235	13	4	48	278	1519	1285	1e-91	 327
+G1867P35RN20.T3	153057_Staphylococcus_USA300_subsp	96.49	171	5	1	73	243	17	186	2e-80	 289
+
+Sorted scores for top hits:
+153057_Staphylococcus_USA300_subsp	608
+153054_Staphylococcus_USA300_subsp	1793
+153053_Staphylococcus_USA300_subsp	2296
+
+Top hit: 153053_Staphylococcus_USA300_subspwith cum-score: 2296
+Running Lucy: lucy -output lucy.seq lucy.qual reads.seq reads.qual
+homologyTrimLucy(seqFile = lucy.seqqualFile=lucy.qualreferenceSeqFile=ref.seq
+RefHomologyCheck: megablast -i /tmp/tmp1nt9WZ -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35FN20.T0	153053_Staphylococcus_USA300_subsp	97.80	910	2	18	48	947	1519	618	0.0	1627
+Match lends: 48
+Match rends: 947
+Match coordinates:48-947
+Lucy trim coordinates: 25-830
+Final trim: 48-830
+RefHomologyCheck: megablast -i /tmp/tmpQVHtdT -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35RN20.T0	153053_Staphylococcus_USA300_subsp	98.15	919	8	9	60	972	7	922	0.0	1677
+Match lends: 60
+Match rends: 972
+Match coordinates:60-972
+Lucy trim coordinates: 27-915
+Final trim: 60-915
+RefHomologyCheck: megablast -i /tmp/tmpd8dMfh -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35FN20.T1	153053_Staphylococcus_USA300_subsp	98.88	894	2	8	42	931	1519	630	0.0	1685
+Match lends: 42
+Match rends: 931
+Match coordinates:42-931
+Lucy trim coordinates: 15-850
+Final trim: 42-850
+RefHomologyCheck: megablast -i /tmp/tmpKcyzx5 -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35RN20.T1	153053_Staphylococcus_USA300_subsp	98.74	874	5	6	59	929	7	877	0.0	1639
+Match lends: 59
+Match rends: 929
+Match coordinates:59-929
+Lucy trim coordinates: 11-875
+Final trim: 59-875
+RefHomologyCheck: megablast -i /tmp/tmpkpyWNM -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35FN20.T2	153053_Staphylococcus_USA300_subsp	94.51	492	9	18	46	535	1519	1044	0.0	 743
+Match lends: 46
+Match rends: 535
+Match coordinates:46-535
+Lucy trim coordinates: 79-596
+Final trim: 79-535
+RefHomologyCheck: megablast -i /tmp/tmpJIcyV7 -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35RN20.T2	153053_Staphylococcus_USA300_subsp	96.53	202	6	1	74	274	21	222	6e-98	 343
+Match lends: 74
+Match rends: 274
+Match coordinates:74-274
+Lucy trim coordinates: 78-232
+Final trim: 78-232
+RefHomologyCheck: megablast -i /tmp/tmpsvABww -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35FN20.T3	153053_Staphylococcus_USA300_subsp	92.77	235	13	4	48	278	1519	1285	1e-93	 327
+Match lends: 48
+Match rends: 278
+Match coordinates:48-278
+Lucy trim coordinates: 82-219
+Final trim: 82-219
+RefHomologyCheck: megablast -i /tmp/tmpGfoSbO -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P35RN20.T3	153053_Staphylococcus_USA300_subsp	95.91	171	6	1	73	243	17	186	5e-80	 281
+Match lends: 73
+Match rends: 243
+Match coordinates:73-243
+Lucy trim coordinates: 81-231
+Final trim: 81-231
+Accessions homology and lucy trimmed: G1867P35FN20.T0,G1867P35RN20.T0,G1867P35FN20.T1,G1867P35RN20.T1,G1867P35FN20.T2,G1867P35RN20.T2,G1867P35FN20.T3,G1867P35RN20.T3
+AMOScmp: tarchive2amos -o raa lucy.seq.htrim.seq
+AMOScmp: AMOScmp -D TGT=raa.afg -D REF=ref.seq raa
+ASMcmp contig layout
+##1_153053_Staphylococcus_USA300_subsp 8 1537 bases, 00000000 checksum.
+#G1867P35RN20.T1(0) [] 826 bases, 00000000 checksum. {1 817} <1 818>
+#G1867P35RN20.T0(0) [] 869 bases, 00000000 checksum. {1 856} <1 861>
+#G1867P35RN20.T3(18) [] 151 bases, 00000000 checksum. {1 151} <19 168>
+#G1867P35RN20.T2(18) [] 157 bases, 00000000 checksum. {1 155} <19 174>
+#G1867P35FN20.T1(707) [RC] 830 bases, 00000000 checksum. {809 1} <707 1513>
+#G1867P35FN20.T0(736) [RC] 801 bases, 00000000 checksum. {783 1} <733 1513>
+#G1867P35FN20.T2(1045) [RC] 457 bases, 00000000 checksum. {457 1} <1038 1478>
+#G1867P35FN20.T3(1364) [RC] 138 bases, 00000000 checksum. {138 1} <1341 1478>
+
+The following reads were placed or assembled by AMOScmp: G1867P35RN20.T1,G1867P35RN20.T0,G1867P35RN20.T3,G1867P35RN20.T2,G1867P35FN20.T1,G1867P35FN20.T0,G1867P35FN20.T2,G1867P35FN20.T3
+AMOScmp scaffolding information:
+>153053_Staphylococcus_USA300_subsp 1 1515 1521
+1_153053_Staphylococcus_USA300_subsp BE 1515 0
+
+
+
+
+----------------------------------------------------------
+## Ref16S Assisted Assembly: G1867P37FF6.T0 G1867P37RF6.T0 G1867P37FF6.T1 G1867P37RF6.T1 G1867P37FF6.T2 G1867P37RF6.T2 G1867P37FF6.T3 G1867P37RF6.T3
+Running megablast to find best matching reference sequence
+CMD: megablast -i reads.seq -d /seq/microbiome/Tool-Dev/microbiomeutil/AmosCmp16Spipeline/sample_data/HMP_MOCK_16S_references.fasta -e 1e-20 -v 1 -b 1 -m 8
+G1867P37FF6.T0	128602_Deinococcus_radiodurans_str	97.92	913	5	14	46	945	1470	559	0.0	1645
+G1867P37RF6.T0	128604_Deinococcus_radiodurans_str	98.57	911	2	11	58	962	12	917	0.0	1691
+G1867P37FF6.T1	128602_Deinococcus_radiodurans_str	99.22	766	2	4	45	807	1470	706	0.0	1467
+G1867P37RF6.T1	128604_Deinococcus_radiodurans_str	98.32	834	1	13	60	880	12	845	0.0	1528
+G1867P37FF6.T2	128602_Deinococcus_radiodurans_str	99.52	207	1	0	46	252	1470	1264	2e-114	 402
+G1867P37RF6.T2	128604_Deinococcus_radiodurans_str	97.07	205	5	1	60	263	12	216	1e-100	 357
+G1867P37FF6.T3	128602_Deinococcus_radiodurans_str	98.25	285	4	1	48	331	1468	1184	1e-150	 523
+G1867P37RF6.T3	128604_Deinococcus_radiodurans_str	97.90	143	3	0	81	223	29	171	2e-71	 260
+
+Sorted scores for top hits:
+128604_Deinococcus_radiodurans_str	2093
+128602_Deinococcus_radiodurans_str	2171
+
+Top hit: 128602_Deinococcus_radiodurans_strwith cum-score: 2171
+Running Lucy: lucy -output lucy.seq lucy.qual reads.seq reads.qual
+homologyTrimLucy(seqFile = lucy.seqqualFile=lucy.qualreferenceSeqFile=ref.seq
+RefHomologyCheck: megablast -i /tmp/tmpWD7wiB -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FF6.T0	128602_Deinococcus_radiodurans_str	97.92	913	5	14	46	945	1470	559	0.0	1645
+Match lends: 46
+Match rends: 945
+Match coordinates:46-945
+Lucy trim coordinates: 15-838
+Final trim: 46-838
+RefHomologyCheck: megablast -i /tmp/tmpx0fJdK -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RF6.T0	128602_Deinococcus_radiodurans_str	98.57	911	2	11	58	962	12	917	0.0	1691
+Match lends: 58
+Match rends: 962
+Match coordinates:58-962
+Lucy trim coordinates: 20-844
+Final trim: 58-844
+RefHomologyCheck: megablast -i /tmp/tmpquP52n -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FF6.T1	128602_Deinococcus_radiodurans_str	99.22	766	2	4	45	807	1470	706	0.0	1467
+Match lends: 45
+Match rends: 807
+Match coordinates:45-807
+Lucy trim coordinates: 14-782
+Final trim: 45-782
+RefHomologyCheck: megablast -i /tmp/tmpdwdvrt -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RF6.T1	128602_Deinococcus_radiodurans_str	98.32	834	1	13	60	880	12	845	0.0	1528
+Match lends: 60
+Match rends: 880
+Match coordinates:60-880
+Lucy trim coordinates: 17-837
+Final trim: 60-837
+RefHomologyCheck: megablast -i /tmp/tmpHCOjXM -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FF6.T2	128602_Deinococcus_radiodurans_str	99.52	207	1	0	46	252	1470	1264	2e-116	 402
+Match lends: 46
+Match rends: 252
+Match coordinates:46-252
+Lucy trim coordinates: 33-250
+Final trim: 46-250
+RefHomologyCheck: megablast -i /tmp/tmpngBEd- -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RF6.T2	128602_Deinococcus_radiodurans_str	97.07	205	5	1	60	263	12	216	1e-102	 357
+Match lends: 60
+Match rends: 263
+Match coordinates:60-263
+Lucy trim coordinates: 9-246
+Final trim: 60-246
+RefHomologyCheck: megablast -i /tmp/tmpp3kpc9 -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37FF6.T3	128602_Deinococcus_radiodurans_str	98.25	285	4	1	48	331	1468	1184	1e-152	 523
+Match lends: 48
+Match rends: 331
+Match coordinates:48-331
+Lucy trim coordinates: 77-311
+Final trim: 77-311
+RefHomologyCheck: megablast -i /tmp/tmpjJO_u1 -d ref.seq -v 1 -b 1 -m 8 -e 1e-20
+G1867P37RF6.T3	128602_Deinococcus_radiodurans_str	97.90	143	3	0	81	223	29	171	2e-73	 260
+Match lends: 81
+Match rends: 223
+Match coordinates:81-223
+Lucy trim coordinates: 90-222
+Final trim: 90-222
+Accessions homology and lucy trimmed: G1867P37FF6.T0,G1867P37RF6.T0,G1867P37FF6.T1,G1867P37RF6.T1,G1867P37FF6.T2,G1867P37RF6.T2,G1867P37FF6.T3,G1867P37RF6.T3
+AMOScmp: tarchive2amos -o raa lucy.seq.htrim.seq
+AMOScmp: AMOScmp -D TGT=raa.afg -D REF=ref.seq raa
+ASMcmp contig layout
+##1_128602_Deinococcus_radiodurans_str 8 1461 bases, 00000000 checksum.
+#G1867P37RF6.T2(0) [] 187 bases, 00000000 checksum. {1 187} <1 187>
+#G1867P37RF6.T1(0) [] 784 bases, 00000000 checksum. {1 778} <1 783>
+#G1867P37RF6.T0(0) [] 787 bases, 00000000 checksum. {1 787} <1 786>
+#G1867P37RF6.T3(26) [] 133 bases, 00000000 checksum. {1 133} <27 159>
+#G1867P37FF6.T0(666) [RC] 795 bases, 00000000 checksum. {793 1} <667 1460>
+#G1867P37FF6.T1(722) [RC] 739 bases, 00000000 checksum. {738 1} <723 1460>
+#G1867P37FF6.T3(1195) [RC] 235 bases, 00000000 checksum. {235 1} <1195 1429>
+#G1867P37FF6.T2(1256) [RC] 205 bases, 00000000 checksum. {205 1} <1256 1460>
+
+The following reads were placed or assembled by AMOScmp: G1867P37RF6.T2,G1867P37RF6.T1,G1867P37RF6.T0,G1867P37RF6.T3,G1867P37FF6.T0,G1867P37FF6.T1,G1867P37FF6.T3,G1867P37FF6.T2
+AMOScmp scaffolding information:
+>128602_Deinococcus_radiodurans_str 1 1460 1471
+1_128602_Deinococcus_radiodurans_str BE 1460 0
+
