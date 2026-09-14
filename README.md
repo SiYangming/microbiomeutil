@@ -49,6 +49,28 @@
 - `Bioperl`、`slclust`（后者需放入 `TreeChopper/util/`）—— TreeChopper
 - `Mummer`、`Amos` —— AmosCmp16Spipeline；需用包内 `AmosPatch/AMOScmp` 替换 Amos 官方的 `amos/bin/AMOScmp` 脚本
 
+## 安装
+
+```bash
+# 方式一：SourceForge 直链（实测可达，但速度约 50 KB/s）
+wget https://master.dl.sourceforge.net/project/microbiomeutil/microbiomeutil-r20110519.tgz -P path/to/
+
+# 方式二：本仓库 Release 附件（同一文件，取用更快）
+wget https://github.com/SiYangming/microbiomeutil/releases/download/r20110519/microbiomeutil-r20110519.tgz -P path/to/
+
+# 解压与编译
+tar zxf path/to/microbiomeutil-r20110519.tgz -C /path/to/install/
+cd /path/to/install/microbiomeutil-r20110519/
+make            # 仅编译 C 写的 NAST-iEr；其余工具均为 Perl，无需编译
+
+# 将 ChimeraSlayer 加入 PATH（其 Perl 脚本需能从 PATH 调用）
+echo 'PATH=$PATH:/path/to/install/microbiomeutil-r20110519/ChimeraSlayer/' >> ~/.bashrc
+source ~/.bashrc
+```
+
+> `make` 需要 `gcc`；运行各工具前请先按上一节把 megablast、cdbtools 等外部依赖装好并加入 `PATH`。
+> 若只用仓库内容（未下载附件），编译前需先从附件补齐 `WigeoN/`、`RESOURCES/`、`ChimeraSlayer/` 下的大文件（见上文清单）。
+
 ## 构建与测试
 
 ```bash
